@@ -11,7 +11,7 @@ Categories = []
 
 [Plagger](https://github.com/miyagawa/plagger) とは、（[Rebuild.fm](http://rebuild.fm/) の）[miyagawa](https://twitter.com/miyagawa) さんが中心となって開発されていた Perl 製のフィードアグリゲータで、プラグインを組み合わせることで RSS フィードなど様々なデータを任意の形式に変換して出力させることができるものです。雑に言うと [ifttt](https://ifttt.com/) のようなもの（のはず）です。
 
-今は代替となるような Web サービスがあったり、そもそも RSS フィードや Web hooks がきちんと用意されている Web サービスも多く、使っている方はあまり多くないようですが{% fnex %}要出典{% endfnex %}、数年前には "[それPla](http://d.hatena.ne.jp/keyword/%A4%BD%A4%ECPlagger%A4%C7%A4%C7%A4%AD%A4%EB%A4%E8)" という言葉が生まれるほど人気のプロダクトだったようです。
+今は代替となるような Web サービスがあったり、そもそも RSS フィードや Web hooks がきちんと用意されている Web サービスも多く、使っている方はあまり多くないようですが[^fn1]、数年前には "[それPla](http://d.hatena.ne.jp/keyword/%A4%BD%A4%ECPlagger%A4%C7%A4%C7%A4%AD%A4%EB%A4%E8)" という言葉が生まれるほど人気のプロダクトだったようです。
 
 ただ世界的に有名な Perl Hacker である宮川さんのプロダクトということもあり、Perl を使っている会社の人間がうかつなことを言うと、
 
@@ -211,4 +211,4 @@ Plagger ほんとに pluggable だった。確かになんでもできそう。�
 
 13日目の担当は [Maco_Tasu](https://twitter.com/Maco_Tasu) さんです。楽しみですね！
 
-{% footnotes_extra %}
+[^fn1]: 要出典

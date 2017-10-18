@@ -5,7 +5,7 @@ slug = "2013/11/14/isucon3-final"
 Categories = []
 +++
 
-\# タイトルはネタです{% fnex %}進撃の巨人ネタですので旬過ぎてる感{% endfnex %}．タイトルには若干語弊があって，実際はとてもよい経験をさせていただけたのでそれだけでも十分"成果"はありました．実力不足で"結果"が出せなかっただけです．
+\# タイトルはネタです[^fn1]．タイトルには若干語弊があって，実際はとてもよい経験をさせていただけたのでそれだけでも十分"成果"はありました．実力不足で"結果"が出せなかっただけです．
 
 [@yunazuno](https://twitter.com/yunazuno)，[@nerbaraki_m2](https://twitter.com/nerbaraki_m2)とともに，[ISUCON](http://isucon.net/)の予選に学生枠で参加して惨敗した話を前に[書いた]({{ root_url }}/blog/2013/10/07/participation-of-the-isucon3-preliminary/)のですが，上位のチームが再現確認でFailしたようで学生枠[繰り上がりで本戦に出場](http://isucon.net/archives/32951235.html)できてしまいました．
 
@@ -111,5 +111,5 @@ Code:596ってなんやねんって感じだったんですが，REST APIのエ�
 
 \# 明日の[ISUCON3反省会](http://www.zusaar.com/event/1737003)参加したかったけど，距離的に参加は難しいので1人でプレモル飲んで反省会します．
 
-{% footnotes_extra %}
+[^fn1]: 進撃の巨人ネタですので旬過ぎてる感
 
