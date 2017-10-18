@@ -12,7 +12,7 @@ Categories = []
 発端
 ----------
 
-{% oembed https://twitter.com/Iketaki/status/486017174163574786 %}
+{{< tweet 486017174163574786 >}}
 
 （ショートカットではないけど…）
 

@@ -19,13 +19,13 @@ tl;dr
 理由はよく分かりませんが、先々週くらいから急に percol が有名になったような感じで、他の人も作りそうだなーとか思ってたら案の定 [@lestrrat](https://twitter.com/lestrrat) さんが書いているみたいです。
 すでに書いてたので一応動くようにはして記事も書きましたが、勢いで書いた全く golang っぽくない汚いコードなので、実際は [@lestrrat](https://twitter.com/lestrrat) さんが実装された go-percol を使うのがよいと思います！
 
-{% oembed https://twitter.com/mattn_jp/status/474708586770079744 %}
+{{< tweet 474708586770079744 >}}
 
-{% oembed https://twitter.com/lestrrat/status/474708853200670722 %}
+{{< tweet 474708853200670722 >}}
 
-{% oembed https://twitter.com/lestrrat/status/475843757481275393 %}
+{{< tweet 475843757481275393 >}}
 
-{% oembed https://twitter.com/lestrrat/status/475932471721086976 %}
+{{< tweet 475932471721086976 >}}
 
 使い方
 ----------
