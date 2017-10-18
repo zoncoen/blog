@@ -19,25 +19,25 @@ percol
 
 [README.md](https://github.com/mooz/percol/blob/master/README.md)の通りですが，以下のようにすれば導入できます．
 
-``` text
+{{< highlight text >}}
 $ git clone git://github.com/mooz/percol.git
 $ cd percol
 # python setup.py install
-```
+{{< /highlight >}}
 
 <h3>簡単な使い方</h3>
 
 ファイルを指定してやるとそのファイルを行単位でインタラクティブに絞り込めます．
 
-``` text
+{{< highlight text >}}
 $ percol /var/log/syslog
-```
+{{< /highlight >}}
 
 パイプを使うと他のコマンドの実行結果も絞り込めます．
 
-``` text
+{{< highlight text >}}
 $ ps aux | percol
-```
+{{< /highlight >}}
 
 アイデアしだいで色々な使い方ができますね！
 
@@ -46,7 +46,7 @@ $ ps aux | percol
 zshのコマンド履歴をpercolで絞り込むの超オススメです（というか僕は現状これにしか使っていない）．
 以下のように`.zshrc`に追記します．
 
-``` sh
+{{< highlight sh >}}
 function exists { which $1 &> /dev/null }
 
 if exists percol; then
@@ -61,7 +61,7 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
-```
+{{< /highlight >}}
 
 すると`Ctrl+R`でのコマンド履歴検索がpercolのインターフェースで行えます．
 たまーに使うコマンドとかさっと叩けます．
@@ -75,14 +75,14 @@ oh-my-zsh を使っていると勝手に `alias history='fc -l 1'` されてし�
 その場合は L7 を `BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")` とすると正常に動作します。
 というか `history` って `fc -l` の 単なる alias だったんですね！学びがある（かなり）
 
-```
+{{< /highlight >}}
 $ man zshbuiltins
 
 ...snip...
 
     history
         Same as fc -l.
-```
+{{< /highlight >}}
 
 Akihiro HARAI さんコメントしていただきありがとうございました！
 
@@ -90,7 +90,7 @@ Akihiro HARAI さんコメントしていただきありがとうございまし
 
 ちなみに以下のように`$HOME/.percol.d/rc.py`に書いておくとEmacsライクなショートカットが使えてより便利です．
 
-``` sh
+{{< highlight sh >}}
 # Emacs like
 percol.import_keymap({
     "C-h" : lambda percol: percol.command.delete_backward_char(),
@@ -111,7 +111,7 @@ percol.import_keymap({
     "C-j" : lambda percol: percol.finish(),
     "C-g" : lambda percol: percol.cancel(),
 })
-```
+{{< /highlight >}}
 
 autojump
 ----------
@@ -122,26 +122,26 @@ autojump
 
 [README.md](https://github.com/joelthelion/autojump/blob/master/README.md)を参考に，以下のようにすれば導入できます．
 
-``` text
+{{< highlight text >}}
 $ git clone git://github.com/joelthelion/autojump.git
 $ cd autojump
 # ./install.py
-```
+{{< /highlight >}}
 
 MacならHomebrewでもインストール可能です．
 
-``` text
+{{< highlight text >}}
 $ brew install autojump
-```
+{{< /highlight >}}
 
 `.zshrc`に以下のように書いておけば`<TAB>`で補完が効くようになります．
 
-``` sh
+{{< highlight sh >}}
 [[ -s /usr/share/autojump/autojump.zsh ]] && . /usr/share/autojump/autojump.zsh
 
 # for homebrew
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-```
+{{< /highlight >}}
 
 使い方
 ----------
@@ -150,9 +150,9 @@ $ brew install autojump
 導入後に移動したディレクトリであれば，`j`コマンドで素早く移動できます．
 例えばTerminal上で以下のように入力して`<TAB>`を押すと，fooが含まれる移動したことがあるディレクトリ一覧が表示され，`<ENTER>`でそのディレクトリに移動します．
 
-``` text
+{{< highlight text >}}
 $ j foo
-```
+{{< /highlight >}}
 
 カレントディレクトリに関係なく移動できるのが最高です．
 便利！！✌('ω'✌ )三✌('ω')✌三( ✌'ω')✌

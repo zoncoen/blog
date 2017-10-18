@@ -23,7 +23,7 @@ HTTP/2 の各言語実装は <https://github.com/http2/http2-spec/wiki/Implement
 
 まずはこんな感じでクライアントを作ります。 `on_change_state` や `on_error` にコールバックを登録しておきます。
 
-``` perl
+{{< highlight perl >}}
 my $client = Protocol::HTTP2::Client->new(
     on_change_state => sub {
         my ( $stream_id, $previous_state, $current_state ) = @_;
@@ -36,11 +36,11 @@ my $client = Protocol::HTTP2::Client->new(
         printf "Error occured: %s\n", const_name( "errors", $error );
     },
 );
-```
+{{< /highlight >}}
 
 次にクライアントにリクエストを登録します。ここではリクエストの内容と、成功した時のコールバックを `on_done` として渡してあげます。まだ実際のリクエストは行われません。
 
-``` perl
+{{< highlight perl >}}
 $client->request(
     ':scheme'    => "http",
     ':authority' => $host . ":" . $port,
@@ -57,11 +57,11 @@ $client->request(
         print $data;
     },
 );
-```
+{{< /highlight >}}
 
 ここまでできたら、`AnyEvent::Socket` の `tcp_connect` を使って TCP コネクションをはり、`$client->feed()` でクライアントに流れてくるデータを渡していきます。クライアントはリクエストが完了すると、リクエストを登録したときの `on_done` を実行します。
 
-``` perl
+{{< highlight perl >}}
 my $w = AnyEvent->condvar;
 
 tcp_connect $host, $port, sub {
@@ -102,18 +102,18 @@ tcp_connect $host, $port, sub {
 };
 
 $w->recv;
-```
+{{< /highlight >}}
 
 簡単ですね（？）
 
-``` bash
+{{< highlight bash >}}
 $ carton exec -- perl client-simple.pl
 Stream 1 changed state from IDLE to HALF_CLOSED
 Stream 1 changed state from HALF_CLOSED to CLOSED
 Get headers. Count: 6
 Get data.   Length: 14
 Hello HTTP/2!
-```
+{{< /highlight >}}
 
 ## リクエストの多重化
 
@@ -121,7 +121,7 @@ HTTP/2 は1つの TCP コネクション上で複数のストリームをつか�
 
 複数のリクエストを同時になげるには、以下のように `request()` をつなげていきます。この例ではサイズの大きい `/assets/largefile` と、サイズの小さい `/assets/hello.txt` の GET を行います。
 
-``` perl
+{{< highlight perl >}}
 $client->request(
     ':scheme'    => "http",
     ':authority' => $host . ":" . $port,
@@ -153,11 +153,11 @@ $client->request(
         print "$data\n";
     },
 );
-```
+{{< /highlight >}}
 
 これを実行すると以下のような結果が得られます。まず Stream 1 (largefile) のリクエストが実行され、次に Stream 3 (hello.txt) が実行されますが、さきに実行されたファイルサイズの大きい Stream 1 のリクエストにブロッキングされることなく、Stream 3 のリクエストが先に完了していることが分かります。
 
-``` bash
+{{< highlight bash >}}
 $ carton exec -- perl client-multi-streams.pl
 Stream 1 changed state from IDLE to HALF_CLOSED
 Stream 3 changed state from IDLE to HALF_CLOSED
@@ -170,7 +170,7 @@ Stream 1 changed state from HALF_CLOSED to CLOSED
 Get headers. Count: 6
 Get data.   Length: 100000000
 Finish getting largefile.
-```
+{{< /highlight >}}
 
 HTTP/2 便利
 

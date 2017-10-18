@@ -45,14 +45,14 @@ Categories = []
 
 とりあえず最初は必要なツールを入れたり，バックアップとったり，SupervisorでPythonのWebAppがあがるように設定したりした．ひとまずベンチを回してみると下のような感じのメッセージを吐いてScore:724.1のFail．
 
-``` console
+{{< highlight console >}}
 2013-11-09T12:00:00 [13552] [CRITICAL] status: 500 INTERNAL SERVER ERROR
 2013-11-09T12:00:00 [13552] [CRITICAL] POST http://125.6.152.4:8022/icon
 2013-11-09T12:00:00 [13552] [CRITICAL] request http://125.6.152.4:8022/icon failed 500 INTERNAL SERVER ERROR
 2013-11-09T12:00:26 [13549] [CRITICAL] status: 500 INTERNAL SERVER ERROR
 2013-11-09T12:00:26 [13549] [CRITICAL] POST http://125.6.152.4:8022/icon
 2013-11-09T12:00:26 [13549] [CRITICAL] request http://125.6.152.4:8022/icon failed 500 INTERNAL SERVER ERROR
-```
+{{< /highlight >}}
 
 デフォルトの状態でなんで動かないんだーと悩み続ける事になります...
 
@@ -72,11 +72,11 @@ WebAppはサブプロセスでImageMagickをよんでるところをライブラ
 
 すると次はこんなエラーに悩むことに．
 
-``` console
+{{< highlight console >}}
 2013-11-09T17:32:25 [64799] [CRITICAL] http://125.6.152.4:8022/icon/9c27bebb6d43c722058cf02abfcdac7ef5e1ba203e176bc928ccb43a24a97911 status failed got: 596 expected: 200
 2013-11-09T17:32:25 [64799] [CRITICAL] http://125.6.152.4:8022/image/e4eae20b3af5aee0a74c7a7c2e7ad866c4a898f6df72f7ccdbb305a96ca42f2a?size=s status failed got: 596 expected: 200
 2013-11-09T17:32:25 [64799] [CRITICAL] http://125.6.152.4:8022/icon/566c02e3784d6a62fe801524b4a2a6dd928660c9378501139b77233bc256ad2b status failed got: 596 expected: 200
-```
+{{< /highlight >}}
 
 Code:596ってなんやねんって感じだったんですが，REST APIのエンドポイントが見つからないってエラーなんですね．エラーが出てるURLを叩くと普通に画像が表示されてなんやねん〜って感じでした．
 
@@ -84,9 +84,9 @@ Code:596ってなんやねんって感じだったんですが，REST APIのエ�
 
 そして最後はIconのDiffエラー...
 
-``` console
+{{< highlight console >}}
 2013-11-09T17:32:11 [64802] [CRITICAL] icon diff > 20% http://125.6.152.4:8022/icon/f101c904d7c8055371a6738ea78322ab600647d92b63d786e15939e4e7464a60
-```
+{{< /highlight >}}
 
 これを解決することなくタイムアップで僕らのISUCON3本戦は終わったのでした...
 

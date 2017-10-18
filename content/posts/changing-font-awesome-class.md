@@ -10,12 +10,12 @@ Categories = []
 綺麗なアイコンを簡単に使うことができ，またテキストであるためCSSで簡単に色や大きさなども変えられる大変便利なものです．このブログでもいくつか使っているのですが，久しぶりに触ってみたらclass名が変わっていました．例を挙げると下のような感じです．
 
 Before:
-``` css
+{{< highlight css >}}
 <i class="icon-circle-arrow-right"></i>
-```
+{{< /highlight >}}
 After:
-``` css
+{{< highlight css >}}
 <i class="fa fa-arrow-circle-right"></i>
-```
+{{< /highlight >}}
 
 "icon"が"fa"に変わっただけではなく，"circle-arrow"が"arrow-circle"に変わっていたりするあたりなんともアレですね．

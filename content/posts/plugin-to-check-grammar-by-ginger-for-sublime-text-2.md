@@ -23,9 +23,9 @@ Categories = []
 **Package Controlを使う:** レポジトリに[https://github.com/zoncoen/Sublime2Ginger](https://github.com/zoncoen/Sublime2Ginger)を追加し，`Package Control: Install Package`からSublime2Gingerをインストールすれば導入完了です．
 
 **Gitを使う:** Sublime TextのPackagesディレクトリにレポジトリを`git clone`します．
-``` sh
+{{< highlight sh >}}
 $ git clone https://github.com/zoncoen/Sublime2Ginger.git
-```
+{{< /highlight >}}
 デフォルトのPackagesディレクトリは以下の場所にあります．
 
 - **OSX:** ```~/Library/Application Support/Sublime Text 2/Packages/```
@@ -40,9 +40,9 @@ $ git clone https://github.com/zoncoen/Sublime2Ginger.git
 コマンドパレットから`Sublime2Ginger: Grammar Check`を実行すると，現在のカーソル行の英文校正が行われます．デフォルトではショートカットとして`Ctrl+Shift+G`が割り当てられているので，ショートカットから実行することもできます．
 
 またデフォルトでは実行すると自動で校正結果が本文に反映されますが，`Preferences->Package Settings->Sublime2Ginger->Settings - User`からUser Settingsファイルを開き，
-``` json
+{{< highlight json >}}
 { "auto_replace" : false }
-```
+{{< /highlight >}}
 とすると自動置換は行われず，校正結果がアウトプットパネルに表示されるだけになります．
 
 おわりに

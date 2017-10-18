@@ -52,7 +52,7 @@ goyacc は yacc の Go 言語版なので、基本的な使い方は yacc と同
 
 とりあえず `.` をトークンにできればよいので、そのようにコードを書きます。
 
-``` go
+{{< highlight go >}}
 type Lexer struct {
     scanner.Scanner
     result Filter
@@ -66,13 +66,13 @@ func (l *Lexer) Lex(lval *yySymType) int {
     lval.token = Token{token: token, literal: l.TokenText()}
     return token
 }
-```
+{{< /highlight >}}
 
 #### Parser
 
 Parser 自体は goyacc が生成してくれるので、定義を書きます。とりあえず sturuct はこんな感じで用意します。Parse した結果がこの struct を用いて AST として表現されます。
 
-``` go
+{{< highlight go >}}
 type Filter interface{}
 
 type Token struct {
@@ -81,11 +81,11 @@ type Token struct {
 }
 
 type EmptyFilter struct {}
-```
+{{< /highlight >}}
 
 Parser の定義はこんな感じです。PERIOD (`.`) がきたら `empty_filter` とみなして `EmptyFilter{}` を返します。最初の実装は `.` の対応のみなので、 `filter` 全体は `empty_filter` のみで構成されます。
 
-``` go
+{{< highlight go >}}
 %union{
     token Token
     expr  Filter
@@ -107,41 +107,41 @@ empty_filter
     {
         $$ = EmptyFilter{}
     }
-```
+{{< /highlight >}}
 
 #### main() を実装する
 
 動作の確認を行えるように `main()` を実装しておきます。`yyParse()` という関数が goyacc によって生成されるので、それに `Lexer` を渡して Parse するコードです。
 
-``` go
+{{< highlight go >}}
 func main() {
     l := new(Lexer)
     l.Init(strings.NewReader(os.Args[1]))
     yyParse(l)
     fmt.Printf("%#v\n", l.result)
 }
-```
+{{< /highlight >}}
 
 #### parser の生成
 
 それでは goyacc を使って定義から Parser の生成してみましょう。以下のコマンドで `parser.go` が生成されます。
 
-``` sh
+{{< highlight sh >}}
 $ go tool yacc -o parser.go parser.go.y
-```
+{{< /highlight >}}
 
 あとは動作確認をしてみましょう。以下の様な結果が得られたでしょうか？
 
-``` sh
+{{< highlight sh >}}
 $ go run parser.go '.'
 main.EmptyFilter{}
-```
+{{< /highlight >}}
 
 ## テストを書く
 
 毎回手打ちで確認するのもあれなので、以下のようにテストを書いておくとよいかと思います。 <https://github.com/zoncoen-sample/goyacc-jq-query-parser/blob/0065f7b9c9e71034dc39f49f6f0090f6028c93d7/parser_test.go>
 
-``` go parser_test.go
+{{< highlight go >}}
 package main
 
 import (
@@ -173,11 +173,11 @@ func TestParse(t *testing.T) {
                 }
         }
 }
-```
+{{< /highlight >}}
 
-``` sh
+{{< highlight sh >}}
 $ go test ./
-```
+{{< /highlight >}}
 
 ## `.key`, `.[0]` の実装
 
@@ -185,7 +185,7 @@ $ go test ./
 
 Lexer で Token として扱うようにして、
 
-``` go
+{{< highlight go >}}
 func (l *Lexer) Lex(lval *yySymType) int {
 	token := int(l.Scan())
 	if token == int('.') {
@@ -206,11 +206,11 @@ func (l *Lexer) Lex(lval *yySymType) int {
 	lval.token = Token{Token: token, Literal: l.TokenText()}
 	return token
 }
-```
+{{< /highlight >}}
 
 Parser の定義を追加します。
 
-``` go
+{{< highlight go >}}
 empty_filter
     : PERIOD
     {
@@ -226,14 +226,14 @@ index_filter
     {
         $$ = IndexFilter{Index: $3.Literal}
     }
-```
+{{< /highlight >}}
 
 テストを追加して確認します。
 
-``` go
+{{< highlight go >}}
     {".key", KeyFilter{Key: "key"}},
 	{".[0]", IndexFilter{Index: "0"}},
-```
+{{< /highlight >}}
 
 ## `|` の実装
 
@@ -241,29 +241,29 @@ index_filter
 
 Token として追加して
 
-``` go
+{{< highlight go >}}
     if token == int('|') {
         token = PIPE
     }
-```
+{{< /highlight >}}
 
 Parser の定義を追加します。こんな感じで再帰のようになっていても問題ありません。
 
-``` go
+{{< highlight go >}}
 filter
     ...
     | filter PIPE filter
     {
         $$ = BinOp{Left: $1, Op: $2, Right: $3}
     }
-```
+{{< /highlight >}}
 
 と言っているのに `conflicts` という一見エラーかな？と思うメッセージがでてきます。実はこのままでもきちんと動くのですが、一体このメッセージはなんなのでしょうか？
 
-```
+{{< /highlight >}}
 $ go tool yacc -o parser.go parser.go.y
 conflicts: 1 shift/reduce
-```
+{{< /highlight >}}
 
 ### conflicts: shift/reduce について
 
@@ -271,9 +271,9 @@ conflicts: 1 shift/reduce
 
 今回の例で言うと下のような文字列を Parse する場合に、
 
-``` sh
+{{< highlight sh >}}
 '.first | .second | .third'
-```
+{{< /highlight >}}
 
 `(.first | .second) | .third` として解釈すべきなのか、 `.first | (.second | .third)` として解釈すべきなのかが明示されておらず曖昧だ、という事になります。
 
@@ -285,7 +285,7 @@ conflicts: shift/reduce の有名な例として「ぶら下がり else 問題�
 
 conflicts を解消したので、テストを追加して確認します。
 
-``` go
+{{< highlight go >}}
     {".key | .[0]", BinOp{Left: KeyFilter{Key: "key"}, Op: Token{Token: 57351, Literal: "|"}, Right: IndexFilter{Index: "0"}}},
     {".first | .second | .third", BinOp{
                 Left: BinOp{
@@ -294,7 +294,7 @@ conflicts を解消したので、テストを追加して確認します。
                         Right: KeyFilter{Key: "second"}},
                 Op:    Token{Token: 57351, Literal: "|"},
                 Right: KeyFilter{Key: "third"}}},
-```
+{{< /highlight >}}
 
 少し長くなってしまいましたが、これでごく簡単な jq のクエリをパースできるようになりました！
 

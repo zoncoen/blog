@@ -18,22 +18,22 @@ Rubyを普段書かないので多分コードは汚いです．
 
 [RubyGems.org](http://rubygems.org/)にあげてあるのでgemで入ります．
 
-``` console
+{{< highlight console >}}
 $ gem install fluent-plugin-werkzeug-profiler
-```
+{{< /highlight >}}
 
 使い方
 ----------
 
 [前回の記事]({{ root_url }}/blog/2013/11/12/werkzeug-wsgi-application-profiler)で紹介したように，Werkzeugのプロファイリング結果をファイルに出力します．あとはtd-agentのconfigに以下の感じで追加するだけです．
 
-``` text /etc/td-agent/td-agent.conf
+{{< highlight text >}}
 <source>
   type werkzeug_profiler
   path path/to/werkzeug.log
   tag werkzeug.webserver
 </source>
-```
+{{< /highlight >}}
 
 in_tailを拡張しているだけなので，新しいログをどんどんとってきてくれます．あとは[前々回の記事]({{ root_url }}/blog/2013/11/11/logging-system-with-fluentd-elasticsearch-kibana3/)で紹介したようにElasticSerchとKibana3と組み合わせれば，可視化・解析が簡単にできます．
 

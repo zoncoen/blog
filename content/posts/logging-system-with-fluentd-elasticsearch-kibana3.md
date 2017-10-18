@@ -33,7 +33,7 @@ Fluentdにはリアルタイムにログを収集して活用できることや�
 - Ubuntu 12.04
 - ruby 1.9.3
 
-``` text
+{{< highlight text >}}
 +------------------------+        +---------------------------------------+
 | Nginx  ---+            |        |                                       |
 |           |            |        |                                       |
@@ -42,13 +42,13 @@ Fluentdにはリアルタイムにログを収集して活用できることや�
 | MySQL  ---+            |        |                                       |
 +------------------------+        +---------------------------------------+
         Web Server                                Log Server
-```
+{{< /highlight >}}
 
 <h3>Nginx & MySQL</h3>
 
 まず下準備としてNginxとMySQLの設定を確認しておきましょう．Nginxはltsvでログを出力するように，MySQLはSlowQueryLogを出力するようにします．ここでは導入方法は省きます．
 
-``` text /etc/nginx/nginx.conf
+{{< highlight text >}}
 ...snip...
 
 http {
@@ -72,9 +72,9 @@ http {
   access_log  /var/log/nginx/access.log  ltsv;
 
 ...snip...
-```
+{{< /highlight >}}
 
-``` text /etc/my.cnf
+{{< highlight text >}}
 ...snip...
 
 slow_query_log=ON
@@ -82,42 +82,42 @@ slow_query_log_file=/var/log/mysql/slow_query.log
 long_query_time=1
 
 ...snip...
-```
+{{< /highlight >}}
 
 <h3>ElasticSearch</h3>
 
 それではLogServerにElasticSearchを導入しましょう．最新版は[公式サイト](http://www.elasticsearch.org/download/)で確認して下さい．ElasticSearchにはJavaの実行環境が必要なのでなければそれも導入します．
 
-``` console
+{{< highlight console >}}
 # apt-get install openjdk-7-jdk
 $ wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.6.deb
 # dpkg -i elasticsearch-0.90.6.deb
-```
+{{< /highlight >}}
 
 起動します．
 
-``` console
+{{< highlight console >}}
 # service elasticsearch start
-```
+{{< /highlight >}}
 
 <h3>Fluentd</h3>
 
 次にログを収集するために各サーバにFluentdを導入します．ここではFluentdの安定版であるtd-agentを使います．最新版が利用したい場合は[Gitリポジトリ](https://github.com/fluent/fluentd.git)から最新版を落としてきて導入してください．
 
-``` console
+{{< highlight console >}}
 $ sudo -i
 # curl -L http://toolbelt.treasure-data.com/sh/install-ubuntu-precise.sh | sh
-```
+{{< /highlight >}}
 
 次に各サーバに必要なプラグインを導入し，```/etc/td-agent/td-agent.conf```を編集します．なおtd-agentは自前のRubyインタプリタを使用しているため，```/usr/lib/fluent/ruby/bin/gem```などtd-agentとともに導入されたgemを使ってプラグインの導入を行ってください(でないと認識されない)．
 
 - Web Server
 
-``` console
+{{< highlight console >}}
 # gem install fluent-plugin-mysqlslowquery
-```
+{{< /highlight >}}
 
-``` text /etc/td-agent/td-agent.conf on Web Server
+{{< highlight text >}}
 <source>
   type tail
   format ltsv
@@ -140,15 +140,15 @@ $ sudo -i
   </server>
   flush_interval 1s
 </match>
-```
+{{< /highlight >}}
 
 - Log Server
 
-``` console
+{{< highlight console >}}
 # gem install fluent-plugin-elasticsearch
-```
+{{< /highlight >}}
 
-``` text /etc/td-agent/td-agent.conf on Log Server
+{{< highlight text >}}
 <source>
   type forward
   port 24224
@@ -177,13 +177,13 @@ $ sudo -i
   logstash_format true
   flush_interval 3s
 </match>
-```
+{{< /highlight >}}
 
 設定が済んだら起動しましょう．ログがとれているか確認したい場合は，Log Server側で```type stdout```を利用して標準出力を見たり，```/var/log/td-agent/td-agent.log```を確認しましょう．
 
-``` console
+{{< highlight console >}}
 # service td-agent start
-```
+{{< /highlight >}}
 
 これでLogServerのElasticSerchにログが保存されていくようにになりました．
 
@@ -191,9 +191,9 @@ $ sudo -i
 
 最後にLogServerにKibana3を導入します．LogServerの公開用ディレクトリに```git clone```して，```/sample```にある設定ファイルを参考に，```index.html```にブラウザでアクセスできるようにします．
 
-``` console
+{{< highlight console >}}
 $ git clone https://github.com/elasticsearch/kibana.git
-```
+{{< /highlight >}}
 
 使い方
 ----------

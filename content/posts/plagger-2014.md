@@ -27,9 +27,9 @@ Categories = []
 
 インストールが大変だーみたいな話を聞いていたけど、意外とそこまででもなかった。ただ何回もやりたいことではないし、docker image にしました。
 
-``` console
+{{< highlight console >}}
 $ docker pull zoncoen/plagger
-```
+{{< /highlight >}}
 
 これですぐ手元で使える環境ができます。
 
@@ -50,18 +50,18 @@ Plagger には `plugin.init`, `subscription.load`, `customfeed.handle`, `aggrega
 
 前述した通り最初に register() というサブルーチンが呼ばれるので、その中で subscription.load hook にサブルーチンを登録します。
 
-``` perl
+{{< highlight perl >}}
 sub register {
     my ( $self, $context ) = @_;
 
     $context->register_hook( $self, 'subscription.load' => $self->can('load'), );
 }
-```
+{{< /highlight >}}
 
 するとその名の通り subscription を load するために、Plagger の run() のなかで hook に登録されたサブルーチンが run_hook() で実行されます。
 Plagger::Plugin::CustomFeed::GitHub では Plagger::Feed の aggregator としてサブルーチンを登録し、その feed を context に add() してます。
 
-``` perl
+{{< highlight perl >}}
 sub load {
     my ( $self, $context, $args ) = @_;
 
@@ -71,11 +71,11 @@ sub load {
 
     return;
 }
-```
+{{< /highlight >}}
 
 あとは run() のなかで feed の aggregate() が順番に実行されていくので、その時に Plagger::Plugin::CustomFeed::GitHub の aggregate() が呼ばれ、entry が add されていきます。
 
-``` perl
+{{< highlight perl >}}
 sub load {
 sub aggregate {
     my ( $self, $context, $args ) = @_;
@@ -107,7 +107,7 @@ sub aggregate {
         Plagger::Plugin::Aggregator::Simple->handle_feed( $url, \$content );
     }
 }
-```
+{{< /highlight >}}
 
 ちなみに面倒くさがって Atom の xml から Plagger::Entry へ変換するのに Plagger::Plugin::Aggregator::Simple->handle_feed() を直接呼んでいて雑。
 正しいやり方か怪しい。
@@ -116,7 +116,7 @@ sub aggregate {
 
 Plagger::Plugin::Notify::Slack も同じように register() で hook にサブルーチン登録する。
 
-``` perl
+{{< highlight perl >}}
 sub load {
 sub register {
     my ( $self, $context ) = @_;
@@ -126,21 +126,21 @@ sub register {
         'plugin.init'   => $self->can('initialize'),
     );
 }
-```
+{{< /highlight >}}
 
 initialize は plugin の initialization として呼ばれるので、ここで必須の設定とかする（今回エラー処理忘れてた）。
 
-``` perl
+{{< highlight perl >}}
 sub initialize {
     my ( $self, $context, $args ) = @_;
 
     $self->{remote} = $self->conf->{webhook_url} or return;
 }
-```
+{{< /highlight >}}
 
 あとは publish() が publish.entry の時に呼ばれるだけです！！！
 
-``` perl
+{{< highlight perl >}}
 sub publish {
     my ( $self, $context, $args ) = @_;
 
@@ -162,13 +162,13 @@ sub publish {
         $context->log( error => "Notiying to Slack failed: " . $res->status_line );
     }
 }
-```
+{{< /highlight >}}
 
 ### Usage
 
 こんな感じで設定して `plagger -c config.yaml` すると Slack に宮川さんの activity が通知されるので動いてるっぽい。
 
-``` yaml config.yaml
+{{< highlight yaml >}}
 global:
   assets: ./assets
   log:
@@ -188,7 +188,7 @@ plugins:
   - module: Notify::Slack
     config:
       webhook_url: {incoming_webhook_url}
-```
+{{< /highlight >}}
 
 <img src="/images/plagger-notify-slack.jpg" class="image">
 
@@ -196,12 +196,12 @@ Filter::Rule は文字通り filter かけれるやつで、`module: Deduped` �
 
 あと下のように設定すると任意のディレクトリの plugin を読み込めるようになります。
 
-``` yaml
+{{< highlight yaml >}}
 global:
   assets_path: ./assets
   plugin_path:
     - ./plugins
-```
+{{< /highlight >}}
 
 ## 感想
 

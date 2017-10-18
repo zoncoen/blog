@@ -28,23 +28,23 @@ Werkzeug
 
 Gitレポジトリからクローンしてきて，```setup.py```を実行するだけです．
 
-``` console
+{{< highlight console >}}
 $ git clone https://github.com/mitsuhiko/werkzeug
 # python setup.py install
-```
+{{< /highlight >}}
 
 プロファイリングを行う
 ----------
 
 それでは実際にプロファイリングを行ってみましょう．ここではサンプルアプリケーションとして，`/`にアクセスすると`Hello World!`と表示する単純なプログラムを用意します．まずFlaskをインストールしておきます．
 
-``` console
+{{< highlight console >}}
 # pip install flask
-```
+{{< /highlight >}}
 
 それではflaskを使ったapp.pyを作ります．
 
-``` python app.py
+{{< highlight python >}}
 from flask import Flask
 app = Flask(__name__)
 
@@ -54,11 +54,11 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run()
-```
+{{< /highlight >}}
 
 次にプロファイリングするコードを書きます．
 
-``` python profiler.py
+{{< highlight python >}}
 #!flask/bin/python
 from werkzeug.contrib.profiler import ProfilerMiddleware, MergeStream
 from app import app
@@ -66,19 +66,19 @@ from app import app
 app.config['PROFILE'] = True
 app.wsgi_app = ProfilerMiddleware(app.wsgi_app)
 app.run(debug = True)
-```
+{{< /highlight >}}
 
 それでは実行してみましょう．
 
-``` console
+{{< highlight console >}}
 $ python profiler.py
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
  * Restarting with reloader
-```
+{{< /highlight >}}
 
 <http://127.0.0.1:5000/>にアクセスします．すると以下のようにプロファイリング結果が標準出力に出力されます．
 
-``` console
+{{< highlight console >}}
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
  * Restarting with reloader
 --------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ PATH: '/'
 --------------------------------------------------------------------------------
 
 127.0.0.1 - - [13/Nov/2013 14:21:51] "GET / HTTP/1.1" 200 -
-```
+{{< /highlight >}}
 
 プロファイリング結果の各項目の説明は以下のようになります．
 
@@ -117,13 +117,13 @@ filename:lineno(function)|ファイル名:行数(関数名)
 
 `sort_by=['calls']`で結果をncallsでソート，`restrictions=[10]`で出力を10件に制限する，などというようにオプションを指定することもできます．
 
-``` python profiler.py
+{{< highlight python >}}
 ...snip...
 app.wsgi_app = ProfilerMiddleware(app.wsgi_app, sort_by=['calls'], restrictions=[10])
 app.run(debug = True)
-```
+{{< /highlight >}}
 
-``` console
+{{< highlight console >}}
 --------------------------------------------------------------------------------
 PATH: '/'
          301 function calls in 0.001 seconds
@@ -147,11 +147,11 @@ PATH: '/'
 --------------------------------------------------------------------------------
 
 127.0.0.1 - - [13/Nov/2013 15:11:02] "GET / HTTP/1.1" 200 -
-```
+{{< /highlight >}}
 
 また，以下のように`MergeStream()`を使えば，標準出力にログを流しながらファイルに書き出すこともできます．
 
-``` python profiler.py
+{{< highlight python >}}
 #!flask/bin/python
 from werkzeug.contrib.profiler import ProfilerMiddleware, MergeStream
 from app import app
@@ -162,11 +162,11 @@ stream = MergeStream(sys.stdout, f)
 app.config['PROFILE'] = True
 app.wsgi_app = ProfilerMiddleware(app.wsgi_app, stream, sort_by=['calls'], restrictions=[10])
 app.run(debug = True)
-```
+{{< /highlight >}}
 
 それでは再帰関数を呼んでみて，きちんとプロファイリングできているか確認してみましょう．以下のように`app.py`を変更し，20番目のフィボナッチ数を出力するようにしてみます．
 
-``` python app.py
+{{< highlight python >}}
 from flask import Flask
 app = Flask(__name__)
 
@@ -183,11 +183,11 @@ def fibonacci():
 
 if __name__ == '__main__':
     app.run()
-```
+{{< /highlight >}}
 
 `profiler.py`を実行し，<http://127.0.0.1:5000/>にアクセスします．
 
-``` console
+{{< highlight console >}}
 --------------------------------------------------------------------------------
 PATH: '/'
          13830 function calls (302 primitive calls) in 0.008 seconds
@@ -211,7 +211,7 @@ PATH: '/'
 --------------------------------------------------------------------------------
 
 127.0.0.1 - - [13/Nov/2013 17:58:24] "GET / HTTP/1.1" 200 -
-```
+{{< /highlight >}}
 
 fib()が時間がかかっているのが確認できると思います．ちなみにncallsの`13529/1`は，`(再帰も含めた呼び出し回数)/(再帰でない大元の呼び出し回数)`となっています．
 

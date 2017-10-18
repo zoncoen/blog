@@ -31,9 +31,9 @@ Vim を使い始めて数ヶ月，そろそろプラグインでも作ってみ�
 
 [NeoBundle ](https://github.com/Shougo/neobundle.vim)で簡単にインストール．
 
-``` vim
+{{< highlight vim >}}
 NeoBundle 'zoncoen/unite-autojump'
-```
+{{< /highlight >}}
 
 当然ですが unite.vim と autojump が必要です．
 
@@ -42,15 +42,15 @@ NeoBundle 'zoncoen/unite-autojump'
 
 Vim 上で以下のコマンドを実行すると，unite.vim のインターフェースで autojump ライクな機能が使えます．
 
-``` text
+{{< highlight text >}}
 :Unite autojump
-```
+{{< /highlight >}}
 
 `.vimrc`に以下のように書いておけば，`:j`で呼び出せて便利（かもしれない）．
 
-``` vim
+{{< highlight vim >}}
 nnoremap :j :<C-u>Unite autojump<CR>
-```
+{{< /highlight >}}
 
 簡単な解説
 ----------
@@ -58,7 +58,7 @@ nnoremap :j :<C-u>Unite autojump<CR>
 unite source と unite action を追加する簡単なプラグインです．
 autojump は過去に移動したディレクトリ履歴と各ディレクトリの重みが`autojump --stat`で取得できるので，その結果を unite.vim に渡しています．
 
-``` vim
+{{< highlight vim >}}
 let s:autojump_command = 'autojump -s'
 
 let s:unite_source = {
@@ -81,11 +81,11 @@ endfunction
 function! unite#sources#autojump#define()
     return exists('s:autojump_command') ? s:unite_source : []
 endfunction
-```
+{{< /highlight >}}
 
 また，`cd`したらその結果を`autojump --add`で autojump のデータベースに反映する`cd_autojump`という unite action を定義しています．
 
-``` vim
+{{< highlight vim >}}
 let s:autojump_add_command = 'autojump -a %s'
 
 let s:action = {
@@ -102,7 +102,7 @@ function! s:action.func(candidate)
 endfunction
 
 call unite#custom#action('cdable', 'cd_autojump', s:action)
-```
+{{< /highlight >}}
 
 TODO
 ----------
