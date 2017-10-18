@@ -1,0 +1,25 @@
+baseURL = "http://blog.zoncoen.net/"
+enableGitInfo = true
+enableRobotsTXT = true
+footnoteReturnLinkContents =  "↩"
+googleAnalytics = "UA-42769904-1"
+hasCJKLanguage = true
+languageCode = "ja-JP"
+pygmentsStyle = "friendly"
+rssLimit = 15
+theme = "hugo_theme_pickles"
+title = "Degorgement"
+[permalinks]
+    posts = "/:year/:month/:day/:filename/"
+[params]
+    author = "Kenta Mori"
+    authorwebsite = "https://twitter.com/zoncoen"
+    avatar = "/images/avatar.png"
+    bio = "Software engineer at WACUL INC.."
+    contact = "https://twitter.com/zoncoen"
+    disqus = "404el"
+    facebook = "kenta.mori.37"
+    ga_api_key = "UA-42769904-1"
+    github = "zoncoen"
+    instagram = "zoncoen"
+    twitter = "zoncoen"
