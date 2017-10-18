@@ -7,7 +7,7 @@ Categories = []
 
 [ISUCON](http://isucon.net/)に[@yunazuno](https://twitter.com/yunazuno)と[@nerbaraki_m2](https://twitter.com/nerbaraki_m2)とともに，チーム"かまたまうどん"と称して参加してきました．
 
-{% img /images/isucon3.jpg 500 375 '準備中' '準備中' %}
+<img src="/images/isucon3.jpg" class="image">
 
 [ISUCON](http://isucon.net/)とは"Iikanjini Speed Up Contest"の略で，お題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングの大会です．
 今年で三回目の大会で，74チーム計210名もの人が参加したようです．

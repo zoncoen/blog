@@ -190,7 +190,7 @@ plugins:
       webhook_url: {incoming_webhook_url}
 ```
 
-{% img /images/plagger-notify-slack.jpg 400 400 'Slack' 'Slack' %}
+<img src="/images/plagger-notify-slack.jpg" class="image">
 
 Filter::Rule は文字通り filter かけれるやつで、`module: Deduped` と設定しておくと重複は弾いてくれるようになるので、動かすたびに同じ feed が再送されなくなる感じです。
 

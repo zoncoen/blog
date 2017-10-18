@@ -29,15 +29,15 @@ Categories = []
 まずは単純なスニペットの登録をしてみます。
 Dashを起動して下の画像で示している＋ボタンから "New Snippet" を選択します。
 
-{% img /images/dash-snippet/default.jpg 600 395 '初期画面' '初期画面' %}
+<img src="/images/dash-snippet/default.jpg" class="image">
 
 そして以下のように入力してみましょう。これで ",ml" と入力すると "example [at] gmail.com" と展開されるスニペットが登録されます。タグはつけとくとスニペットが増えてきた時に管理が楽になります。
 
-{% img /images/dash-snippet/snippet1.jpg 600 395 'スニペット1' 'スニペット1' %}
+<img src="/images/dash-snippet/snippet1.jpg" class="image">
 
 以下のようにスニペットが展開されます。
 
-{% img /images/dash-snippet/demo1.gif 600 315 'デモ1' 'デモ1' %}
+<img src="/images/dash-snippet/demo1.gif" class="image">
 
 ### 2. 日付や時間を自動的に挿入する
 
@@ -45,27 +45,27 @@ Dashを起動して下の画像で示している＋ボタンから "New Snippet
 
 右上のプルダウンメニューから Data を選択すると、展開文字列に "@date" という文字列が挿入されます。もちろんそのまま "@date" と挿入しても大丈夫です。
 
-{% img /images/dash-snippet/snippet2.jpg 646 395 'スニペット2' 'スニペット2' %}
+<img src="/images/dash-snippet/snippet2.jpg" class="image">
 
 これを呼び出すと以下のように自動的に日付が挿入されます。
 
-{% img /images/dash-snippet/demo2.gif 557 172 'デモ2' 'デモ2' %}
+<img src="/images/dash-snippet/demo2.gif" class="image">
 
 時間も同じようにプルダウンメニューから Time を選択することで挿入できます。
 
 なおフォーマットは設定の Snippets タブから設定することができます。
 
-{% img /images/dash-snippet/format.jpg 400 194 'フォーマット設定' 'フォーマット設定' %}
+<img src="/images/dash-snippet/format.jpg" class="image">
 
 ### 3. プレースホルダーを利用する
 
 Dash のスニペットはプレースホルダーも使うことができます。デフォルトのプレースホルダーは "\_\_hoge\_\_" のようにアンダースコア2つで囲む形式です。以下の様なスニペットを登録してみましょう。
 
-{% img /images/dash-snippet/snippet3.jpg 600 395 'スニペット3' 'スニペット3' %}
+<img src="/images/dash-snippet/snippet3.jpg" class="image">
 
 スニペットを展開するとポップアップで編集画面が開くので、プレースホルダーの部分を編集して挿入することができます。
 
-{% img /images/dash-snippet/demo3.gif 400 215 'デモ3' 'デモ3' %}
+<img src="/images/dash-snippet/demo3.gif" class="image">
 
 ### 4. スニペットを複数マシンで共有する
 
@@ -73,7 +73,7 @@ Dash はスニペットが外部ファイルとして保存されるので、 Dr
 
 設定の "Snippet Library Location" をDropboxのディレクトリにすればOKです。
 
-{% img /images/dash-snippet/sync.jpg 400 195 'スニペットファイルの設定' 'スニペットファイルの設定' %}
+<img src="/images/dash-snippet/sync.jpg" class="image">
 
 二台目以降は open で snippet ファイルを開けば他のマシンで登録したスニペットが使えるようになります。
 

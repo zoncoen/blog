@@ -31,13 +31,13 @@ Categories = []
 
 本戦は予選TOP20組と学生枠3組，選抜2組の25組だったのですが，9:50くらいにヒカリエ11階にいったらすでにかなりの人数の参加者が揃っていました．エンジニアは朝弱いというのは迷信だったか...
 
-{% img /images/isucon3-nameplate.jpg 400 400 'かっこいいネームプレートとブラウンのクリアファイルをいただきました' 'かっこいいネームプレートとブラウンのクリアファイルをいただきました' %}
+<img src="/images/isucon3-nameplate.jpg" class="image">
 
 <h3>本戦開始まで</h3>
 
 本戦が始まるまでそれなりに時間があったのですが，あまりやれることもなく適当に参考になりそうな記事を読み返したりしてました．
 
-{% img /images/isucon3-line.jpg 400 400 'LINEさんのオフィスはとても綺麗でした' 'LINEさんのオフィスはとても綺麗でした'  %}
+<img src="/images/isucon3-line.jpg" class="image">
 
 <h3>本戦開始</h3>
 
@@ -60,7 +60,7 @@ Categories = []
 
 とりあえず落ち着こうと早々に昼食．とっても美味しかったです．
 
-{% img /images/isucon3-launch.jpg 400 400 '鶏南蛮！' '鶏南蛮！' %}
+<img src="/images/isucon3-launch.jpg" class="image">
 
 そして実は当日の朝にフィンランドから帰国した[@yunazuno](https://twitter.com/yunazuno)が関空経由で会場に到着ｗ疲れているとこ頑張って来てもらって若干申し訳なかったですね．
 

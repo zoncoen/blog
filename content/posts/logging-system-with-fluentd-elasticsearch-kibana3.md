@@ -8,7 +8,7 @@ Categories = []
 [ISUCON](http://isucon.net/)本戦に参加することができてしまったため，各種ログを集めて簡単に見れると良さそうだなぁと思っていたところ，[Fluentd](http://fluentd.org/) + [Elasticsearch](http://www.elasticsearch.org/) + [Kibana3](http://www.elasticsearch.org/overview/kibana/)の組み合わせがなかなかよさそうだったので試してみました．  
 本記事では，NginxのAccessLogとMySQLのSlowQueryLogを可視化してみます．
 
-{% img /images/kibana3-derivequeries.png 700 316 'Kibana3' 'Kibana3' %}
+<img src="/images/kibana3-derivequeries.png" class="image">
 
 <!--more-->
 
@@ -200,11 +200,11 @@ $ git clone https://github.com/elasticsearch/kibana.git
 
 ブラウザで```http://{IP of Log Server}```にアクセスすると下のようなページが表示されるので，真ん中下あたりの赤丸で囲んでいる```Logstash Dashboard```をクリックします．
 
-{% img /images/kibana3-welcome.png 700 250 'Welcome to Kibana3' 'Welcome to Kibana3' %}
+<img src="/images/kibana3-welcome.png" class="image">
 
 きちんとログがElasticSearchに追加されていれば，下のようにグラフとJSONフォーマットなデータが見れるようになっているはずです．
 
-{% img /images/kibana3-histogram.png 700 400 'Kibana3' 'Kibana3' %}
+<img src="/images/kibana3-histogram.png" class="image">
 
 あとは上にある検索窓や左にあるFieldから絞込を行って，ある時間のuri毎のアクセス数を見たり，Statusコードの割合を見たり，レスポンスに一定以上の時間がかかっているアクセスを探したりと色々なことができます．
 またこのページの上でのせたようにグラフの種類や色を変えたりももちろんできます．
@@ -215,11 +215,11 @@ $ git clone https://github.com/elasticsearch/kibana.git
 
 ちなみにこんな感じでドラッグで範囲を指定すると
 
-{% img /images/kibana3-drag.png 700 245 'Kibana3' 'Kibana3' %}
+<img src="/images/kibana3-drag.png" class="image">
 
 選択した範囲で絞り込めたりもします．すごい(小並感)
 
-{% img /images/kibana3-zoom.png 700 245 'Kibana3' 'Kibana3' %}
+<img src="/images/kibana3-zoom.png" class="image">
 
 まとめ
 ----------

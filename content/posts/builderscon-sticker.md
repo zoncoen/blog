@@ -9,7 +9,7 @@ Categories = []
 
 <!--more-->
 
-{% img /images/builderscon-stricker.png 600 534 'sticker' 'sticker' %}
+<img src="/images/builderscon-stricker.png" class="image">
 
 圧倒的存在感のマスコット[ビーコン君](https://builderscon.io/beacon)が大変かわいらしいですね！
 ロゴステッカーの方は [Stickers Specification](https://github.com/terinjokes/StickerConstructorSpec#hexagon) にあわせて作成しています。

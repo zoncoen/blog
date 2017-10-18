@@ -19,7 +19,7 @@ Workflow は簡単に公開することができるので，様々な Workflow �
 
 で，ヘビーユーザーな自分はメールの検索も Alfred でやりたかったので，今回 Alfred で Mail.app 内のメールを検索する Workflow をつくったという話です．
 
-{% img /images/mail-searcher.gif 552 369 'Screenshot' 'Screenshot' %}
+<img src="/images/mail-searcher.gif" class="image">
 
 <!--more-->
 
