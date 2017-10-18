@@ -260,7 +260,7 @@ filter
 
 と言っているのに `conflicts` という一見エラーかな？と思うメッセージがでてきます。実はこのままでもきちんと動くのですが、一体このメッセージはなんなのでしょうか？
 
-{{< /highlight >}}
+{{< highlight console >}}
 $ go tool yacc -o parser.go parser.go.y
 conflicts: 1 shift/reduce
 {{< /highlight >}}

@@ -75,7 +75,7 @@ oh-my-zsh を使っていると勝手に `alias history='fc -l 1'` されてし�
 その場合は L7 を `BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")` とすると正常に動作します。
 というか `history` って `fc -l` の 単なる alias だったんですね！学びがある（かなり）
 
-{{< /highlight >}}
+{{< highlight console >}}
 $ man zshbuiltins
 
 ...snip...
