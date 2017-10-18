@@ -1,7 +1,7 @@
 +++
 title = "goyacc を使って簡単な jq like query parser を作る"
 date = "2015-12-22"
-slug = "2015/12/22/cli-toml-processor-with-goyacc"
+aliases = ["blog/2015/12/22/cli-toml-processor-with-goyacc"]
 Categories = []
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Fluentd + ElasticSearch + Kibana3で簡単に様々なログを可視化・解析する"
 date = "2013-11-11"
-slug = "2013/11/11/logging-system-with-fluentd-elasticsearch-kibana3"
+aliases = ["blog/2013/11/11/logging-system-with-fluentd-elasticsearch-kibana3"]
 Categories = []
 +++
 

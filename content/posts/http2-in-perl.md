@@ -1,7 +1,7 @@
 +++
 title = "Perl の HTTP/2 事情"
 date = "2015-12-11"
-slug = "2015/12/11/http2-in-perl"
+aliases = ["blog/2015/12/11/http2-in-perl"]
 Categories = []
 +++
 

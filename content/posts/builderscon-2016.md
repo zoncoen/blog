@@ -1,7 +1,7 @@
 +++
 title = "builderscon にスタッフとして参加しました"
 date = "2016-12-08"
-slug = "2016/12/08/builderscon-2016"
+aliases = ["blog/2016/12/08/builderscon-2016"]
 Categories = []
 +++
 

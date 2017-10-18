@@ -1,7 +1,7 @@
 +++
 title = "builderscon ステッカーが届きました"
 date = "2016-10-21"
-slug = "2016/10/21/builderscon-sticker"
+aliases = ["blog/2016/10/21/builderscon-sticker"]
 Categories = []
 +++
 

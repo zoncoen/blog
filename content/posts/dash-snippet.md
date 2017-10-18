@@ -1,7 +1,7 @@
 +++
 title = "Dashのスニペット機能の紹介"
 date = "2014-07-07"
-slug = "2014/07/07/dash-snippet"
+aliases = ["blog/2014/07/07/dash-snippet"]
 Categories = []
 +++
 

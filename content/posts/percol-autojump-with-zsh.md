@@ -1,7 +1,7 @@
 +++
 title = "ライフチェンジングなpercolとautojumpの紹介"
 date = "2014-01-14"
-slug = "2014/01/14/percol-autojump-with-zsh"
+aliases = ["blog/2014/01/14/percol-autojump-with-zsh"]
 Categories = []
 +++
 

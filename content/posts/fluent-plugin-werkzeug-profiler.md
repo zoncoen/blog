@@ -1,7 +1,7 @@
 +++
 title = "fluent-plugin-werkzeug-profilerを書いた"
 date = "2013-11-13"
-slug = "2013/11/13/fluent-plugin-werkzeug-profiler"
+aliases = ["blog/2013/11/13/fluent-plugin-werkzeug-profiler"]
 Categories = []
 +++
 

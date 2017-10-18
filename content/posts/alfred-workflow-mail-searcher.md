@@ -1,7 +1,7 @@
 +++
 title = "Gmail ライクにメールを検索する Alfred Workflow をつくった"
 date = "2014-02-16"
-slug = "2014/02/16/alfred-workflow-mail-searcher"
+aliases = ["blog/2014/02/16/alfred-workflow-mail-searcher"]
 Categories = []
 +++
 

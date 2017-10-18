@@ -1,7 +1,7 @@
 +++
 title = "Go で HTTP/2 最速実装やってみた"
 date = "2014-11-03"
-slug = "2014/11/03/minimum-http2"
+aliases = ["blog/2014/11/03/minimum-http2"]
 Categories = []
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Gingerを使って英文校正を行うSublime Textプラグインをつくった"
 date = "2013-08-11"
-slug = "2013/08/11/plugin-to-check-grammar-by-ginger-for-sublime-text-2"
+aliases = ["blog/2013/08/11/plugin-to-check-grammar-by-ginger-for-sublime-text-2"]
 Categories = []
 +++
 

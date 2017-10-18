@@ -1,7 +1,7 @@
 +++
 title = "WerkzeugでFlaskを使ったPythonのWebAppをプロファイリングする"
 date = "2013-11-12"
-slug = "2013/11/12/werkzeug-wsgi-application-profiler"
+aliases = ["blog/2013/11/12/werkzeug-wsgi-application-profiler"]
 Categories = []
 +++
 

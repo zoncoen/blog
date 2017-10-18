@@ -1,7 +1,7 @@
 +++
 title = "初心者がGoでpercolを実装してみた"
 date = "2014-06-06"
-slug = "2014/06/06/percol-in-golang"
+aliases = ["blog/2014/06/06/percol-in-golang"]
 Categories = []
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "ISUCON3予選に学生枠で参加してみた #isucon"
 date = "2013-10-07"
-slug = "2013/10/07/participation-of-the-isucon3-preliminary"
+aliases = ["blog/2013/10/07/participation-of-the-isucon3-preliminary"]
 Categories = []
 +++
 

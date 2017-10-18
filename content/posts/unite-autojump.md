@@ -1,7 +1,7 @@
 +++
 title = "unite-autojumpをつくった"
 date = "2014-01-15"
-slug = "2014/01/15/unite-autojump"
+aliases = ["blog/2014/01/15/unite-autojump"]
 Categories = []
 +++
 

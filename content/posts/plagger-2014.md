@@ -1,7 +1,7 @@
 +++
 title = "Plagger 入門 in 2014"
 date = "2014-12-12"
-slug = "2014/12/12/plagger-2014"
+aliases = ["blog/2014/12/12/plagger-2014"]
 Categories = []
 +++
 

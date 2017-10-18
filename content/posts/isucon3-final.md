@@ -1,7 +1,7 @@
 +++
 title = "今回のISUCON3本戦で我々は，いや，今回も...くっ...なんの成果も!!得られませんでした!! #isucon"
 date = "2013-11-14"
-slug = "2013/11/14/isucon3-final"
+aliases = ["blog/2013/11/14/isucon3-final"]
 Categories = []
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "はじめての YAPC::Asia (2014)"
 date = "2014-09-08"
-slug = "2014/09/08/yapc-2014-impression"
+aliases = ["blog/2014/09/08/yapc-2014-impression"]
 Categories = []
 +++
 

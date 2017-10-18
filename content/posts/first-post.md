@@ -1,7 +1,7 @@
 +++
 title = "First step"
 date = "2013-07-29"
-slug = "2013/07/29/first-post"
+aliases = ["blog/2013/07/29/first-post"]
 Categories = []
 +++
 

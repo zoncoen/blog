@@ -1,7 +1,7 @@
 +++
 title = "Gotanda.pm #1 に参加してきました"
 date = "2014-06-18"
-slug = "2014/06/18/gotanda-pm-01"
+aliases = ["blog/2014/06/18/gotanda-pm-01"]
 Categories = []
 +++
 

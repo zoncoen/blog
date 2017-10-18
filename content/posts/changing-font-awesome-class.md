@@ -1,7 +1,7 @@
 +++
 title = "Font Awesomeのクラス名が変わっていた件"
 date = "2013-11-10"
-slug = "2013/11/10/changing-font-awesome-class"
+aliases = ["blog/2013/11/10/changing-font-awesome-class"]
 Categories = []
 +++
 
