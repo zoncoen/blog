@@ -1,0 +1,29 @@
+language: go
+
+go:
+  - 1.9
+
+install: true
+
+branches:
+  only:
+    - master
+
+before_script:
+  - openssl aes-256-cbc -K $encrypted_93867b66f97e_key -iv $encrypted_93867b66f97e_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis@example.com"
+  - go get github.com/gohugoio/hugo
+  - cd ./themes/hugo_theme_pickles && git submodule init && git submodule update && cd ../../
+
+script:
+  - hugo
+  - rm -rf .git
+  - rm .gitignore
+  - git init
+  - git add public
+  - git commit --quiet -m "Deploy from Travis CI (JOB ${TRAVIS_JOB_NUMBER})"
+  - git subtree split --prefix public/ -b gh-pages
+  - git push --force "git@github.com:zoncoen/blog.zoncoen.net.git" gh-pages:gh-pages
