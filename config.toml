@@ -1,4 +1,4 @@
-baseURL = "http://blog.zoncoen.net/"
+baseURL = "https://blog.zoncoen.net/"
 enableGitInfo = true
 enableRobotsTXT = true
 footnoteReturnLinkContents =  "↩"
