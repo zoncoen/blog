@@ -20,6 +20,8 @@ before_script:
 
 script:
   - hugo
+
+after_success:
   - rm -rf .git
   - rm .gitignore
   - git init
