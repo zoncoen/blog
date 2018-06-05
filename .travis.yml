@@ -28,4 +28,4 @@ after_success:
   - git add public
   - git commit --quiet -m "Deploy from Travis CI (JOB ${TRAVIS_JOB_NUMBER})"
   - git subtree split --prefix public/ -b gh-pages
-  - git push --force "git@github.com:zoncoen/blog.zoncoen.net.git" gh-pages:gh-pages
+  - git push --force "git@github.com:zoncoen/blog.git" gh-pages:gh-pages
