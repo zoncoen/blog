@@ -10,7 +10,7 @@ branches:
     - master
 
 before_script:
-  - openssl aes-256-cbc -K $encrypted_93867b66f97e_key -iv $encrypted_93867b66f97e_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_68770243b107_key -iv $encrypted_68770243b107_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.name "Travis CI"
