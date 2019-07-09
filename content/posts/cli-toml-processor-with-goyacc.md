@@ -2,10 +2,10 @@
 title = "goyacc を使って簡単な jq like query parser を作る"
 date = "2015-12-22"
 aliases = ["blog/2015/12/22/cli-toml-processor-with-goyacc"]
-Categories = []
+tags = ['Go', 'tool']
 +++
 
-この記事は [Go その3 Advent Calendar 2015](http://qiita.com/advent-calendar/2015/go3) の 22日目の記事です。
+この記事は [Go その 3 Advent Calendar 2015](http://qiita.com/advent-calendar/2015/go3) の 22 日目の記事です。
 
 go tool の中には [yacc](https://golang.org/cmd/yacc/) というコマンドがあります。これはパーサジェネレータである yacc の Go 言語版です。この記事ではこれをつかって簡単な [jq](https://stedolan.github.io/jq/) のクエリパーサっぽいものを作ってみようと思います。
 
@@ -39,8 +39,8 @@ Unix のパイプのように、前の出力結果を次の入力として渡す
 
 ### yacc の使い方
 
-goyacc は yacc の Go 言語版なので、基本的な使い方は yacc と同じです。今回でてくる部分は簡単に説明しますが、Go はわかるけど yacc 全く分からん！という人は [goyaccで構文解析を行う](http://qiita.com/k0kubun/items/1b641dfd186fe46feb65) を先に読むと良いかもしれません。
-また yacc の仕組みなどをもう少し詳しく知りたい場合は、 [速習yacc](http://i.loveruby.net/ja/rhg/book/yacc.html) が参考になるかもしれません。 私も yacc を触るのは今回が初めてだったのですが、これらの記事がとても参考になりました。
+goyacc は yacc の Go 言語版なので、基本的な使い方は yacc と同じです。今回でてくる部分は簡単に説明しますが、Go はわかるけど yacc 全く分からん！という人は [goyacc で構文解析を行う](http://qiita.com/k0kubun/items/1b641dfd186fe46feb65) を先に読むと良いかもしれません。
+また yacc の仕組みなどをもう少し詳しく知りたい場合は、 [速習 yacc](http://i.loveruby.net/ja/rhg/book/yacc.html) が参考になるかもしれません。 私も yacc を触るのは今回が初めてだったのですが、これらの記事がとても参考になりました。
 
 ### 雛形を作る
 
@@ -54,17 +54,17 @@ goyacc は yacc の Go 言語版なので、基本的な使い方は yacc と同
 
 {{< highlight go >}}
 type Lexer struct {
-    scanner.Scanner
-    result Filter
+scanner.Scanner
+result Filter
 }
 
 func (l *Lexer) Lex(lval *yySymType) int {
-    token := int(l.Scan())
-    if token == int('.') {
-        token = PERIOD
-    }
-    lval.token = Token{token: token, literal: l.TokenText()}
-    return token
+token := int(l.Scan())
+if token == int('.') {
+token = PERIOD
+}
+lval.token = Token{token: token, literal: l.TokenText()}
+return token
 }
 {{< /highlight >}}
 
@@ -76,8 +76,8 @@ Parser 自体は goyacc が生成してくれるので、定義を書きます�
 type Filter interface{}
 
 type Token struct {
-    token   int
-    literal string
+token int
+literal string
 }
 
 type EmptyFilter struct {}
@@ -87,8 +87,8 @@ Parser の定義はこんな感じです。PERIOD (`.`) がきたら `empty_filt
 
 {{< highlight go >}}
 %union{
-    token Token
-    expr  Filter
+token Token
+expr Filter
 }
 
 %type<expr> filter empty_filter
@@ -97,16 +97,16 @@ Parser の定義はこんな感じです。PERIOD (`.`) がきたら `empty_filt
 %%
 
 filter
-    : empty_filter
-    {
-        $$ = $1
-        yylex.(*Lexer).result = $$
+: empty_filter
+{
+\$$ = $1
+yylex.(\*Lexer).result = $$
     }
 empty_filter
     : PERIOD
     {
         $$ = EmptyFilter{}
-    }
+}
 {{< /highlight >}}
 
 #### main() を実装する
@@ -115,10 +115,10 @@ empty_filter
 
 {{< highlight go >}}
 func main() {
-    l := new(Lexer)
-    l.Init(strings.NewReader(os.Args[1]))
-    yyParse(l)
-    fmt.Printf("%#v\n", l.result)
+l := new(Lexer)
+l.Init(strings.NewReader(os.Args[1]))
+yyParse(l)
+fmt.Printf("%#v\n", l.result)
 }
 {{< /highlight >}}
 
@@ -127,13 +127,13 @@ func main() {
 それでは goyacc を使って定義から Parser の生成してみましょう。以下のコマンドで `parser.go` が生成されます。
 
 {{< highlight sh >}}
-$ go tool yacc -o parser.go parser.go.y
+\$ go tool yacc -o parser.go parser.go.y
 {{< /highlight >}}
 
 あとは動作確認をしてみましょう。以下の様な結果が得られたでしょうか？
 
 {{< highlight sh >}}
-$ go run parser.go '.'
+\$ go run parser.go '.'
 main.EmptyFilter{}
 {{< /highlight >}}
 
@@ -145,38 +145,38 @@ main.EmptyFilter{}
 package main
 
 import (
-        "io"
-        "strings"
-        "testing"
+"io"
+"strings"
+"testing"
 )
 
 var parseTests = []struct {
-        text string
-        ast  Filter
+text string
+ast Filter
 }{
-        {".", EmptyFilter{}},
+{".", EmptyFilter{}},
 }
 
 func parse(r io.Reader) Filter {
-        l := new(Lexer)
-        l.Init(r)
-        yyParse(l)
-        return l.result
+l := new(Lexer)
+l.Init(r)
+yyParse(l)
+return l.result
 }
 
-func TestParse(t *testing.T) {
-        for i, test := range parseTests {
-                r := strings.NewReader(test.text)
-                res := parse(r)
-                if res != test.ast {
-                        t.Errorf("case %d: got %#v; expected %#v", i, res, test.ast)
-                }
-        }
+func TestParse(t \*testing.T) {
+for i, test := range parseTests {
+r := strings.NewReader(test.text)
+res := parse(r)
+if res != test.ast {
+t.Errorf("case %d: got %#v; expected %#v", i, res, test.ast)
+}
+}
 }
 {{< /highlight >}}
 
 {{< highlight sh >}}
-$ go test ./
+\$ go test ./
 {{< /highlight >}}
 
 ## `.key`, `.[0]` の実装
@@ -187,24 +187,24 @@ Lexer で Token として扱うようにして、
 
 {{< highlight go >}}
 func (l *Lexer) Lex(lval *yySymType) int {
-	token := int(l.Scan())
-	if token == int('.') {
-		token = PERIOD
-	}
-	if token == scanner.Ident {
-		token = STRING
-	}
-	if token == scanner.Int {
-		token = INT
-	}
-	if token == int('[') {
-		token = LBRACK
-	}
-	if token == int(']') {
-		token = RBRACK
-	}
-	lval.token = Token{Token: token, Literal: l.TokenText()}
-	return token
+token := int(l.Scan())
+if token == int('.') {
+token = PERIOD
+}
+if token == scanner.Ident {
+token = STRING
+}
+if token == scanner.Int {
+token = INT
+}
+if token == int('[') {
+token = LBRACK
+}
+if token == int(']') {
+token = RBRACK
+}
+lval.token = Token{Token: token, Literal: l.TokenText()}
+return token
 }
 {{< /highlight >}}
 
@@ -212,9 +212,10 @@ Parser の定義を追加します。
 
 {{< highlight go >}}
 empty_filter
-    : PERIOD
-    {
-        $$ = EmptyFilter{}
+: PERIOD
+{
+
+$$
     }
 key_filter
     : PERIOD STRING
@@ -225,14 +226,14 @@ index_filter
     : PERIOD LBRACK INT RBRACK
     {
         $$ = IndexFilter{Index: $3.Literal}
-    }
+}
 {{< /highlight >}}
 
 テストを追加して確認します。
 
 {{< highlight go >}}
-    {".key", KeyFilter{Key: "key"}},
-	{".[0]", IndexFilter{Index: "0"}},
+{".key", KeyFilter{Key: "key"}},
+{".[0]", IndexFilter{Index: "0"}},
 {{< /highlight >}}
 
 ## `|` の実装
@@ -242,26 +243,26 @@ index_filter
 Token として追加して
 
 {{< highlight go >}}
-    if token == int('|') {
-        token = PIPE
-    }
+if token == int('|') {
+token = PIPE
+}
 {{< /highlight >}}
 
 Parser の定義を追加します。こんな感じで再帰のようになっていても問題ありません。
 
 {{< highlight go >}}
 filter
-    ...
-    | filter PIPE filter
-    {
-        $$ = BinOp{Left: $1, Op: $2, Right: $3}
-    }
+...
+| filter PIPE filter
+{
+\$$ = BinOp{Left: $1, Op: $2, Right: $3}
+}
 {{< /highlight >}}
 
 と言っているのに `conflicts` という一見エラーかな？と思うメッセージがでてきます。実はこのままでもきちんと動くのですが、一体このメッセージはなんなのでしょうか？
 
 {{< highlight console >}}
-$ go tool yacc -o parser.go parser.go.y
+\$ go tool yacc -o parser.go parser.go.y
 conflicts: 1 shift/reduce
 {{< /highlight >}}
 
@@ -277,7 +278,7 @@ conflicts: 1 shift/reduce
 
 `(.first | .second) | .third` として解釈すべきなのか、 `.first | (.second | .third)` として解釈すべきなのかが明示されておらず曖昧だ、という事になります。
 
-conflicts: shift/reduce の有名な例として「ぶら下がり else 問題」というものがあります。詳しい解説が前述した [速習yacc](http://i.loveruby.net/ja/rhg/book/yacc.html) にて詳しく解説されています。
+conflicts: shift/reduce の有名な例として「ぶら下がり else 問題」というものがあります。詳しい解説が前述した [速習 yacc](http://i.loveruby.net/ja/rhg/book/yacc.html) にて詳しく解説されています。
 
 ちなみに今回の場合、 `|` 演算子は左結合（常に左から右へと処理を進めていく）なので、`%left<token> PIPE` としてその事を明示してやれば、曖昧ではなくなり conflicts は出なくなります。
 
@@ -286,14 +287,14 @@ conflicts: shift/reduce の有名な例として「ぶら下がり else 問題�
 conflicts を解消したので、テストを追加して確認します。
 
 {{< highlight go >}}
-    {".key | .[0]", BinOp{Left: KeyFilter{Key: "key"}, Op: Token{Token: 57351, Literal: "|"}, Right: IndexFilter{Index: "0"}}},
-    {".first | .second | .third", BinOp{
-                Left: BinOp{
-                        Left:  KeyFilter{Key: "first"},
-                        Op:    Token{Token: 57351, Literal: "|"},
-                        Right: KeyFilter{Key: "second"}},
-                Op:    Token{Token: 57351, Literal: "|"},
-                Right: KeyFilter{Key: "third"}}},
+{".key | .[0]", BinOp{Left: KeyFilter{Key: "key"}, Op: Token{Token: 57351, Literal: "|"}, Right: IndexFilter{Index: "0"}}},
+{".first | .second | .third", BinOp{
+Left: BinOp{
+Left: KeyFilter{Key: "first"},
+Op: Token{Token: 57351, Literal: "|"},
+Right: KeyFilter{Key: "second"}},
+Op: Token{Token: 57351, Literal: "|"},
+Right: KeyFilter{Key: "third"}}},
 {{< /highlight >}}
 
 少し長くなってしまいましたが、これでごく簡単な jq のクエリをパースできるようになりました！
@@ -308,3 +309,4 @@ conflicts を解消したので、テストを追加して確認します。
 TOML は top level が配列であることを許してないので、その辺ケアしてあげないといけなくてどういう挙動が正しいんかねと作ってて思ったり。（そもそもだれもコマンドライン TOML プロセッサーなんて使わないのではと思いつつ）
 
 あと deeeet さんが[紹介されてた](http://deeeet.com/writing/2015/12/21/go-fuzz/) go-fuzz を使った fuzz testing とかこういうののテストに良さそうだなーと思ったのでそのうちやってみたい。
+$$

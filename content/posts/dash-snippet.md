@@ -2,32 +2,29 @@
 title = "Dashのスニペット機能の紹介"
 date = "2014-07-07"
 aliases = ["blog/2014/07/07/dash-snippet"]
-Categories = []
+tags = ['tips']
 +++
 
 [Dash](https://itunes.apple.com/jp/app/dash-docs-snippets/id458034879) という Mac 用のアプリケーションがありますが、それのスニペット機能が個人的にイケてますよという話です。
 
 <!--more-->
 
-発端
-----------
+## 発端
 
 {{< tweet 486017174163574786 >}}
 
 （ショートカットではないけど…）
 
-導入
-----------
+## 導入
 
 [App Store](https://itunes.apple.com/jp/app/dash-docs-snippets/id458034879) にあります。（雑）
 
-使い方
-----------
+## 使い方
 
 ### 1. シンプルなスニペットの例
 
 まずは単純なスニペットの登録をしてみます。
-Dashを起動して下の画像で示している＋ボタンから "New Snippet" を選択します。
+Dash を起動して下の画像で示している＋ボタンから "New Snippet" を選択します。
 
 <img src="/images/dash-snippet/default.jpg" class="image">
 
@@ -59,7 +56,7 @@ Dashを起動して下の画像で示している＋ボタンから "New Snippet
 
 ### 3. プレースホルダーを利用する
 
-Dash のスニペットはプレースホルダーも使うことができます。デフォルトのプレースホルダーは "\_\_hoge\_\_" のようにアンダースコア2つで囲む形式です。以下の様なスニペットを登録してみましょう。
+Dash のスニペットはプレースホルダーも使うことができます。デフォルトのプレースホルダーは "\_\_hoge\_\_" のようにアンダースコア 2 つで囲む形式です。以下の様なスニペットを登録してみましょう。
 
 <img src="/images/dash-snippet/snippet3.jpg" class="image">
 
@@ -71,14 +68,12 @@ Dash のスニペットはプレースホルダーも使うことができます
 
 Dash はスニペットが外部ファイルとして保存されるので、 Dropbox などを使うことで簡単にスニペットを共有することができます。
 
-設定の "Snippet Library Location" をDropboxのディレクトリにすればOKです。
+設定の "Snippet Library Location" を Dropbox のディレクトリにすれば OK です。
 
 <img src="/images/dash-snippet/sync.jpg" class="image">
 
 二台目以降は open で snippet ファイルを開けば他のマシンで登録したスニペットが使えるようになります。
 
-まとめ
-----------
+## まとめ
 
 Dash のスニペットは簡単に登録できてどこからでも使えて、設定も複数マシン間で共有できるのでなかなかよいのではないでしょうか？個人的には日本語入力になっていてもきちんと展開されるのも地味に嬉しいなと思ってます。使ってない人は是非試してみてください。
-

@@ -1,12 +1,12 @@
 ---
 title: "Google Home と mornin' を使って声でカーテンを開閉する"
 date: 2017-12-12T00:16:44+09:00
+tags: ['Google Home']
 ---
 
+この記事は [WACUL Advent Calendar 2017](https://qiita.com/advent-calendar/2017/wacul) の 12 日目の記事です。
 
-この記事は [WACUL Advent Calendar 2017](https://qiita.com/advent-calendar/2017/wacul) の12日目の記事です。
-
-11日目の記事は [@kyoh86](https://twitter.com/kyoh86) さんの [「Goの俺的scaffoldはこれだ！2017年版」](https://qiita.com/kyoh86/items/74dbf9dcddd5bd43e01e) でした。
+11 日目の記事は [@kyoh86](https://twitter.com/kyoh86) さんの [「Go の俺的 scaffold はこれだ！2017 年版」](https://qiita.com/kyoh86/items/74dbf9dcddd5bd43e01e) でした。
 
 <!--more-->
 
@@ -18,7 +18,7 @@ Google Home から IFTTT をキックして Pushbullet で送ったプッシュ�
 
 ## Motivation
 
-我が家では以前から [Nature Remo](http://nature.global/) を利用してエアコンをアプリ経由で屋外から操作したりしていましたが、10月に Google Home が発売されたことで声でエアコンやテレビを操作できる様になりました。Google Home と Nature Remo の連携は [公式のドキュメント](http://nature.global/jp/ifttt-setup/2017/10/8/google-home) に記載されている通り簡単に行うことができます。
+我が家では以前から [Nature Remo](http://nature.global/) を利用してエアコンをアプリ経由で屋外から操作したりしていましたが、10 月に Google Home が発売されたことで声でエアコンやテレビを操作できる様になりました。Google Home と Nature Remo の連携は [公式のドキュメント](http://nature.global/jp/ifttt-setup/2017/10/8/google-home) に記載されている通り簡単に行うことができます。
 
 また、テレビやエアコンだけでなく [mornin'](https://mornin.jp/) を使って起床時間にカーテンが自動的に開くようにしているのですが、これを取り付けていると手動でカーテンを開け閉めできずアプリ経由で操作しなければなりません。頻繁に開け閉めするわけではないとはいえ、毎回スマートフォンを手にとりアプリを起動して操作する事には煩わしさを感じていました。そこで mornin' も Google Home から声で操作できるようにしました。
 
@@ -33,10 +33,10 @@ mornin' には開発者向けの API や IFTTT との連携が用意されてお
 - [IFTTT](https://ifttt.com/)
 - [Pushbullet](https://www.pushbullet.com/)
 - 以下のアプリを導入した適当な Android 端末
-    - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
-        - [Secure Settings Plugin](https://play.google.com/store/apps/details?id=com.intangibleobject.securesettings.plugin)
-        - [AutoInput Plugin](https://play.google.com/store/apps/details?id=com.joaomgcd.autoinput)
-    - [めざましカーテン mornin’ [モーニン]](https://play.google.com/store/apps/details?id=jp.co.robit.mornin)
+  - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
+    - [Secure Settings Plugin](https://play.google.com/store/apps/details?id=com.intangibleobject.securesettings.plugin)
+    - [AutoInput Plugin](https://play.google.com/store/apps/details?id=com.joaomgcd.autoinput)
+  - [めざましカーテン mornin’ [モーニン]](https://play.google.com/store/apps/details?id=jp.co.robit.mornin)
 
 ## 1. Google Home から IFTTT をキックする
 
@@ -76,4 +76,4 @@ Tasker を起動して、新しい Task を追加する。
 
 IFTTT や Pushbullet が間にいることや Tasker での自動操作に Wait を入れていることもあり少し時間がかかっていますが、声でカーテンを操作できるようになりました。
 
-明日13日目は [@podhmo](https://twitter.com/podhmo) さんです。楽しみですね。
+明日 13 日目は [@podhmo](https://twitter.com/podhmo) さんです。楽しみですね。

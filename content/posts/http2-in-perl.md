@@ -2,12 +2,12 @@
 title = "Perl の HTTP/2 事情"
 date = "2015-12-11"
 aliases = ["blog/2015/12/11/http2-in-perl"]
-Categories = []
+tags = ['Perl']
 +++
 
-この記事は [Perl Advent Calendar 2015](http://qiita.com/advent-calendar/2015/perl5) の 11日目の記事です。
+この記事は [Perl Advent Calendar 2015](http://qiita.com/advent-calendar/2015/perl5) の 11 日目の記事です。
 
-昨日の記事は [mackee_w](https://twitter.com/mackee_w) さんの「[ペライチPSGIアプリケーションの概念と実証](http://qiita.com/mackee_w/items/71eca78fb40e5c38fe60)」でした。
+昨日の記事は [mackee_w](https://twitter.com/mackee_w) さんの「[ペライチ PSGI アプリケーションの概念と実証](http://qiita.com/mackee_w/items/71eca78fb40e5c38fe60)」でした。
 
 今年 2015 年は、HTTP/2 の RFC が出ましたね。というわけで HTTP/2 の話をします。以前 [Gotanda.pm #4](http://gotanda-pm.connpass.com/event/11993/) にて「[Perl の HTTP/2 事情](https://speakerdeck.com/zoncoen/http2-in-perl)」というタイトルで発表したのですが、それとだいたい一緒です（記事書いてなかったので…）。
 
@@ -26,15 +26,15 @@ HTTP/2 の各言語実装は <https://github.com/http2/http2-spec/wiki/Implement
 {{< highlight perl >}}
 my $client = Protocol::HTTP2::Client->new(
     on_change_state => sub {
-        my ( $stream_id, $previous_state, $current_state ) = @_;
-        printf "Stream %i changed state from %s to %s\n",
-          $stream_id, const_name( "states", $previous_state ),
-          const_name( "states", $current_state );
+        my ( $stream*id, $previous_state, $current_state ) = @*;
+printf "Stream %i changed state from %s to %s\n",
+$stream_id, const_name( "states", $previous_state ),
+const_name( "states", $current_state );
     },
     on_error => sub {
         my $error = shift;
-        printf "Error occured: %s\n", const_name( "errors", $error );
-    },
+printf "Error occured: %s\n", const_name( "errors", \$error );
+},
 );
 {{< /highlight >}}
 
@@ -53,33 +53,33 @@ $client->request(
     on_done => sub {
         my ( $headers, $data ) = @_;
         printf "Get headers. Count: %i\n", scalar(@$headers) / 2;
-        printf "Get data.   Length: %i\n", length($data);
+printf "Get data. Length: %i\n", length($data);
         print $data;
-    },
+},
 );
 {{< /highlight >}}
 
 ここまでできたら、`AnyEvent::Socket` の `tcp_connect` を使って TCP コネクションをはり、`$client->feed()` でクライアントに流れてくるデータを渡していきます。クライアントはリクエストが完了すると、リクエストを登録したときの `on_done` を実行します。
 
 {{< highlight perl >}}
-my $w = AnyEvent->condvar;
+my \$w = AnyEvent->condvar;
 
-tcp_connect $host, $port, sub {
-    my ($fh) = @_ or die "connection failed: $!";
+tcp*connect $host, $port, sub {
+my (\$fh) = @* or die "connection failed: $!";
     my $handle;
-    $handle = AnyEvent::Handle->new(
+$handle = AnyEvent::Handle->new(
         fh       => $fh,
-        autocork => 1,
-        on_error => sub {
-            $_[0]->destroy;
-            print "connection error\n";
-            $w->send;
+autocork => 1,
+on*error => sub {
+\$*[0]->destroy;
+print "connection error\n";
+$w->send;
         },
         on_eof => sub {
             $handle->destroy;
-            $w->send;
-        }
-    );
+\$w->send;
+}
+);
 
     # First write preface to peer
     while ( my $frame = $client->next_frame ) {
@@ -99,25 +99,26 @@ tcp_connect $host, $port, sub {
             $handle->push_shutdown if $client->shutdown;
         }
     );
+
 };
 
-$w->recv;
+\$w->recv;
 {{< /highlight >}}
 
 簡単ですね（？）
 
 {{< highlight bash >}}
-$ carton exec -- perl client-simple.pl
+\$ carton exec -- perl client-simple.pl
 Stream 1 changed state from IDLE to HALF_CLOSED
 Stream 1 changed state from HALF_CLOSED to CLOSED
 Get headers. Count: 6
-Get data.   Length: 14
+Get data. Length: 14
 Hello HTTP/2!
 {{< /highlight >}}
 
 ## リクエストの多重化
 
-HTTP/2 は1つの TCP コネクション上で複数のストリームをつかってリクエストの多重化を行うことができます。`Protocol::HTTP2` でももちろんリクエストの多重化ができます。
+HTTP/2 は 1 つの TCP コネクション上で複数のストリームをつかってリクエストの多重化を行うことができます。`Protocol::HTTP2` でももちろんリクエストの多重化ができます。
 
 複数のリクエストを同時になげるには、以下のように `request()` をつなげていきます。この例ではサイズの大きい `/assets/largefile` と、サイズの小さい `/assets/hello.txt` の GET を行います。
 
@@ -134,7 +135,7 @@ $client->request(
     on_done => sub {
         my ( $headers, $data ) = @_;
         printf "Get headers. Count: %i\n", scalar(@$headers) / 2;
-        printf "Get data.   Length: %i\n", length($data);
+printf "Get data. Length: %i\n", length($data);
         print "Finish getting largefile.\n"
     },
 )->request(
@@ -149,26 +150,26 @@ $client->request(
     on_done => sub {
         my ( $headers, $data ) = @_;
         printf "Get headers. Count: %i\n", scalar(@$headers) / 2;
-        printf "Get data.   Length: %i\n", length($data);
+printf "Get data. Length: %i\n", length($data);
         print "$data\n";
-    },
+},
 );
 {{< /highlight >}}
 
 これを実行すると以下のような結果が得られます。まず Stream 1 (largefile) のリクエストが実行され、次に Stream 3 (hello.txt) が実行されますが、さきに実行されたファイルサイズの大きい Stream 1 のリクエストにブロッキングされることなく、Stream 3 のリクエストが先に完了していることが分かります。
 
 {{< highlight bash >}}
-$ carton exec -- perl client-multi-streams.pl
+\$ carton exec -- perl client-multi-streams.pl
 Stream 1 changed state from IDLE to HALF_CLOSED
 Stream 3 changed state from IDLE to HALF_CLOSED
 Stream 3 changed state from HALF_CLOSED to CLOSED
 Get headers. Count: 6
-Get data.   Length: 14
+Get data. Length: 14
 Hello HTTP/2!
 
 Stream 1 changed state from HALF_CLOSED to CLOSED
 Get headers. Count: 6
-Get data.   Length: 100000000
+Get data. Length: 100000000
 Finish getting largefile.
 {{< /highlight >}}
 
@@ -179,7 +180,7 @@ HTTP/2 便利
 というわけで Perl でも HTTP/2 は使えるよ、という話でした。ただ AnyEvent でやるの割とめんどくさいですね…（コールバックばっかで一昔前の JavaScript っぽい）。
 Enjoy!
 
-明日は [yusukebe](https://twitter.com/yusukebe) さんです。楽しみですね！（すでに[「先走って」書かれている](http://blog.yusuke.be/entry/2015/12/09/104244)ようですがw）
+明日は [yusukebe](https://twitter.com/yusukebe) さんです。楽しみですね！（すでに[「先走って」書かれている](http://blog.yusuke.be/entry/2015/12/09/104244)ようですが w）
 
 ## P.S.
 

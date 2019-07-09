@@ -1,6 +1,7 @@
 ---
-title: "Circle CI で Go のテストを並列に実行する"
+title: 'Circle CI で Go のテストを並列に実行する'
 date: 2018-08-06T15:45:10+09:00
+tags: ['Go', 'test', 'CI', 'tips']
 ---
 
 CicleCI の機能を使うと簡単にできる。

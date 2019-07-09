@@ -1,6 +1,7 @@
 ---
-title: "Bazel を使うための準備（Vim 編）"
+title: 'Bazel を使うための準備（Vim 編）'
 date: 2019-07-08T12:17:34+09:00
+tags: ['Vim', 'Bazel']
 ---
 
 [Bazel](https://bazel.build/) に入門するための下準備として Vim で `BUILD.bazel` を書くための設定をした。

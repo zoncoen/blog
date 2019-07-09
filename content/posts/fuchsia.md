@@ -1,11 +1,12 @@
 ---
-title: "Google の新しい OS「Fuchsia」を macOS 上で動かしてみる"
+title: 'Google の新しい OS「Fuchsia」を macOS 上で動かしてみる'
 date: 2017-12-18T22:54:12+09:00
+tags: ['Fuchsia']
 ---
 
-この記事は [WACUL Advent Calendar 2017](https://qiita.com/advent-calendar/2017/wacul) の19日目の記事です。
+この記事は [WACUL Advent Calendar 2017](https://qiita.com/advent-calendar/2017/wacul) の 19 日目の記事です。
 
-18日目の記事は [@bokuweb](https://twitter.com/bokuweb17) さんの [「ファミコンエミュレータの創り方 - Hello, World!編 -」](https://qiita.com/bokuweb/items/1575337bef44ae82f4d3) でした。
+18 日目の記事は [@bokuweb](https://twitter.com/bokuweb17) さんの [「ファミコンエミュレータの創り方 - Hello, World!編 -」](https://qiita.com/bokuweb/items/1575337bef44ae82f4d3) でした。
 
 <!--more-->
 
@@ -29,7 +30,7 @@ $ brew install wget pkg-config glib autoconf automake libtool golang
 $ curl -s "https://fuchsia.googlesource.com/scripts/+/master/bootstrap?format=TEXT" | base64 --decode | bash -s topaz
 ```
 
-`jiri` と Fuchsia の開発用コマンドである `fx` に適当にPATHを通しておきます。
+`jiri` と Fuchsia の開発用コマンドである `fx` に適当に PATH を通しておきます。
 
 ```console
 $ cd topaz

@@ -2,16 +2,16 @@
 title = "Plagger 入門 in 2014"
 date = "2014-12-12"
 aliases = ["blog/2014/12/12/plagger-2014"]
-Categories = []
+tags = ['Perl']
 +++
 
-この記事は [Perl Advent Calendar 2014](http://qiita.com/advent-calendar/2014/perl) の 12日目の記事です。いいですか、**2014** ですよ。あなたは間違えて2008年の Advent Calender を開いてしまったわけではないので安心してください。
+この記事は [Perl Advent Calendar 2014](http://qiita.com/advent-calendar/2014/perl) の 12 日目の記事です。いいですか、**2014** ですよ。あなたは間違えて 2008 年の Advent Calender を開いてしまったわけではないので安心してください。
 
-11日目の記事は [hisaichi5518](https://twitter.com/hisaichi5518) さんの [Data::DumperとB::Deparseを合わせて使ってみる。](http://hisaichi5518.hatenablog.jp/entry/2014/12/11/222358) でした。
+11 日目の記事は [hisaichi5518](https://twitter.com/hisaichi5518) さんの [Data::Dumper と B::Deparse を合わせて使ってみる。](http://hisaichi5518.hatenablog.jp/entry/2014/12/11/222358) でした。
 
 [Plagger](https://github.com/miyagawa/plagger) とは、（[Rebuild.fm](http://rebuild.fm/) の）[miyagawa](https://twitter.com/miyagawa) さんが中心となって開発されていた Perl 製のフィードアグリゲータで、プラグインを組み合わせることで RSS フィードなど様々なデータを任意の形式に変換して出力させることができるものです。雑に言うと [ifttt](https://ifttt.com/) のようなもの（のはず）です。
 
-今は代替となるような Web サービスがあったり、そもそも RSS フィードや Web hooks がきちんと用意されている Web サービスも多く、使っている方はあまり多くないようですが[^fn1]、数年前には "[それPla](http://d.hatena.ne.jp/keyword/%A4%BD%A4%ECPlagger%A4%C7%A4%C7%A4%AD%A4%EB%A4%E8)" という言葉が生まれるほど人気のプロダクトだったようです。
+今は代替となるような Web サービスがあったり、そもそも RSS フィードや Web hooks がきちんと用意されている Web サービスも多く、使っている方はあまり多くないようですが[^fn1]、数年前には "[それ Pla](http://d.hatena.ne.jp/keyword/%A4%BD%A4%ECPlagger%A4%C7%A4%C7%A4%AD%A4%EB%A4%E8)" という言葉が生まれるほど人気のプロダクトだったようです。
 
 ただ世界的に有名な Perl Hacker である宮川さんのプロダクトということもあり、Perl を使っている会社の人間がうかつなことを言うと、
 
@@ -28,7 +28,7 @@ Categories = []
 インストールが大変だーみたいな話を聞いていたけど、意外とそこまででもなかった。ただ何回もやりたいことではないし、docker image にしました。
 
 {{< highlight console >}}
-$ docker pull zoncoen/plagger
+\$ docker pull zoncoen/plagger
 {{< /highlight >}}
 
 これですぐ手元で使える環境ができます。
@@ -52,9 +52,10 @@ Plagger には `plugin.init`, `subscription.load`, `customfeed.handle`, `aggrega
 
 {{< highlight perl >}}
 sub register {
-    my ( $self, $context ) = @_;
+my ( $self, $context ) = @\_;
 
     $context->register_hook( $self, 'subscription.load' => $self->can('load'), );
+
 }
 {{< /highlight >}}
 
@@ -63,13 +64,14 @@ Plagger::Plugin::CustomFeed::GitHub では Plagger::Feed の aggregator とし�
 
 {{< highlight perl >}}
 sub load {
-    my ( $self, $context, $args ) = @_;
+my ( $self, $context, \$args ) = @\_;
 
     my $feed = Plagger::Feed->new;
     $feed->aggregator( sub { $self->aggregate(@_) } );
     $context->subscription->add($feed);
 
     return;
+
 }
 {{< /highlight >}}
 
@@ -78,7 +80,7 @@ sub load {
 {{< highlight perl >}}
 sub load {
 sub aggregate {
-    my ( $self, $context, $args ) = @_;
+my ( $self, $context, \$args ) = @\_;
 
     my $token = $self->conf->{token} or return;
     my $users = $self->conf->{users} or return;
@@ -106,6 +108,7 @@ sub aggregate {
 
         Plagger::Plugin::Aggregator::Simple->handle_feed( $url, \$content );
     }
+
 }
 {{< /highlight >}}
 
@@ -119,12 +122,12 @@ Plagger::Plugin::Notify::Slack も同じように register() で hook にサブ�
 {{< highlight perl >}}
 sub load {
 sub register {
-    my ( $self, $context ) = @_;
-    $context->register_hook(
+my ( $self, $context ) = @\_;
+$context->register_hook(
         $self,
-        'publish.entry' => $self->can('publish'),
+'publish.entry' => $self->can('publish'),
         'plugin.init'   => $self->can('initialize'),
-    );
+);
 }
 {{< /highlight >}}
 
@@ -132,9 +135,10 @@ initialize は plugin の initialization として呼ばれるので、ここで
 
 {{< highlight perl >}}
 sub initialize {
-    my ( $self, $context, $args ) = @_;
+my ( $self, $context, \$args ) = @\_;
 
     $self->{remote} = $self->conf->{webhook_url} or return;
+
 }
 {{< /highlight >}}
 
@@ -142,7 +146,7 @@ sub initialize {
 
 {{< highlight perl >}}
 sub publish {
-    my ( $self, $context, $args ) = @_;
+my ( $self, $context, \$args ) = @\_;
 
     $context->log( info => "Notifying " . $args->{entry}->title . " to Slack" );
 
@@ -161,6 +165,7 @@ sub publish {
     unless ( $res->is_success ) {
         $context->log( error => "Notiying to Slack failed: " . $res->status_line );
     }
+
 }
 {{< /highlight >}}
 
@@ -170,25 +175,26 @@ sub publish {
 
 {{< highlight yaml >}}
 global:
-  assets: ./assets
-  log:
-    level: info
+assets: ./assets
+log:
+level: info
 
 plugins:
-  - module: CustomFeed::GitHub
-    config:
-      token: {github_api_token}
-      users:
-        - miyagawa
 
-  - module: Filter::Rule
-    rule:
-      - module: Deduped
+- module: CustomFeed::GitHub
+  config:
+  token: {github_api_token}
+  users: - miyagawa
 
-  - module: Notify::Slack
-    config:
-      webhook_url: {incoming_webhook_url}
-{{< /highlight >}}
+- module: Filter::Rule
+  rule:
+
+  - module: Deduped
+
+- module: Notify::Slack
+  config:
+  webhook_url: {incoming_webhook_url}
+  {{< /highlight >}}
 
 <img src="/images/plagger-notify-slack.jpg" class="image">
 
@@ -198,9 +204,8 @@ Filter::Rule は文字通り filter かけれるやつで、`module: Deduped` �
 
 {{< highlight yaml >}}
 global:
-  assets_path: ./assets
-  plugin_path:
-    - ./plugins
+assets_path: ./assets
+plugin_path: - ./plugins
 {{< /highlight >}}
 
 ## 感想
@@ -209,6 +214,6 @@ Plagger ほんとに pluggable だった。確かになんでもできそう。�
 
 ちなみに定期実行は cron とかでやってたんですかね？そういう情報出てこなかったのでよくわかりませんでした！
 
-13日目の担当は [Maco_Tasu](https://twitter.com/Maco_Tasu) さんです。楽しみですね！
+13 日目の担当は [Maco_Tasu](https://twitter.com/Maco_Tasu) さんです。楽しみですね！
 
 [^fn1]: 要出典

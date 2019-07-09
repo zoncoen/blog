@@ -2,7 +2,7 @@
 title = "builderscon にスタッフとして参加しました"
 date = "2016-12-08"
 aliases = ["blog/2016/12/08/builderscon-2016"]
-Categories = []
+tags = ['conference']
 +++
 
 遅くなってしまいましたが、[builderscon tokyo 2016](https://builderscon.io/builderscon/tokyo/2016) のコアスタッフとして参加させていただいたので記録として記事を書いておきます。
@@ -36,17 +36,21 @@ Categories = []
 ## Links
 
 ### 公式サイト
+
 http://builderscon.io/
 
 ### 公式ブログ
+
 http://blog.builderscon.io/
 
 ### 主催のエントリ
+
 https://medium.com/@lestrrat/builderscon%E3%82%84%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B-6ab5c20c73f5#.11h186744
 
-### 公式Twitter
+### 公式 Twitter
+
 https://twitter.com/builderscon
 
-### Slack 自動招待URL
-https://slack-invite-dot-builderscon-1248.appspot.com/
+### Slack 自動招待 URL
 
+https://slack-invite-dot-builderscon-1248.appspot.com/

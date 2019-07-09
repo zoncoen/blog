@@ -1,6 +1,7 @@
 ---
-title: "ブログで使う static site generator を Octopress から Hugo に移行した"
+title: 'ブログで使う static site generator を Octopress から Hugo に移行した'
 date: 2017-12-02T18:36:13+09:00
+tags: ['Go', 'tool', 'blog']
 ---
 
 最近全然更新できてなかったこのブログを、いまさらながら Octopress から Hugo に移行した。
@@ -37,10 +38,9 @@ $ find ./content/posts/old -type f -exec sed -i "" -e 's/slug = \"\(.*\)\"/alias
 
 ### markdown code blocks の Hugo shortcodes への置き換え
 
-
-```console
+````console
 $ find ./content/posts -type f -exec sed -i "" -e 's/^```$/{{</* \/highlight */>}}/g' {} \;
 $ find ./content/posts -type f -exec sed -i "" -e 's/^``` *\([a-zA-Z]*\)\(.*\)/{{</* highlight \1 */>}}/g' {} \;
-```
+````
 
 以上でだいたい終わり。簡単だった。
