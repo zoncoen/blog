@@ -26,3 +26,5 @@ title = "Degorgement"
     github = "zoncoen"
     instagram = "zoncoen"
     twitter = "zoncoen"
+[blackfriday]
+    hrefTargetBlank = true
