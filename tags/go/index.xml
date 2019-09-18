@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Degorgement</title>
+    <link>https://blog.zoncoen.net/tags/go/</link>
+    <description>Recent content in Go on Degorgement</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Wed, 18 Sep 2019 22:28:39 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.zoncoen.net/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo v0.57.0 の breaking change</title>
+      <link>https://blog.zoncoen.net/2019/09/18/hugo-v0.57.0/</link>
+      <pubDate>Wed, 18 Sep 2019 22:28:39 +0900</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2019/09/18/hugo-v0.57.0/</guid>
+      <description>&lt;p&gt;Hugo v0.57.0 に breaking change が含まれていて自分のブログのトップページが壊れた。その時の修正メモ。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Software Design 2019 年 10 月号に寄稿させていただきました</title>
+      <link>https://blog.zoncoen.net/2019/09/18/software-design-2019-10/</link>
+      <pubDate>Wed, 18 Sep 2019 20:43:24 +0900</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2019/09/18/software-design-2019-10/</guid>
+      <description>&lt;p&gt;技術評論社様の &lt;a href=&#34;http://gihyo.jp/magazine/SD/archive/2019/201910&#34; target=&#34;_blank&#34;&gt;Software Design 2019 年 10 月号&lt;/a&gt;に「Go のプラグイン機能でソフトウェアに柔軟な拡張性を」というタイトルで寄稿させていただきました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Circle CI で Go のテストを並列に実行する</title>
+      <link>https://blog.zoncoen.net/2018/08/06/run-tests-in-parallel-on-circle-ci/</link>
+      <pubDate>Mon, 06 Aug 2018 15:45:10 +0900</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2018/08/06/run-tests-in-parallel-on-circle-ci/</guid>
+      <description>&lt;p&gt;CicleCI の機能を使うと簡単にできる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログで使う static site generator を Octopress から Hugo に移行した</title>
+      <link>https://blog.zoncoen.net/2017/12/02/migrate-to-hugo/</link>
+      <pubDate>Sat, 02 Dec 2017 18:36:13 +0900</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2017/12/02/migrate-to-hugo/</guid>
+      <description>&lt;p&gt;最近全然更新できてなかったこのブログを、いまさらながら Octopress から Hugo に移行した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>goyacc を使って簡単な jq like query parser を作る</title>
+      <link>https://blog.zoncoen.net/2015/12/22/cli-toml-processor-with-goyacc/</link>
+      <pubDate>Tue, 22 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2015/12/22/cli-toml-processor-with-goyacc/</guid>
+      <description>&lt;p&gt;この記事は &lt;a href=&#34;http://qiita.com/advent-calendar/2015/go3&#34; target=&#34;_blank&#34;&gt;Go その 3 Advent Calendar 2015&lt;/a&gt; の 22 日目の記事です。&lt;/p&gt;
+
+&lt;p&gt;go tool の中には &lt;a href=&#34;https://golang.org/cmd/yacc/&#34; target=&#34;_blank&#34;&gt;yacc&lt;/a&gt; というコマンドがあります。これはパーサジェネレータである yacc の Go 言語版です。この記事ではこれをつかって簡単な &lt;a href=&#34;https://stedolan.github.io/jq/&#34; target=&#34;_blank&#34;&gt;jq&lt;/a&gt; のクエリパーサっぽいものを作ってみようと思います。&lt;/p&gt;
+
+&lt;p&gt;（この記事のコードは &lt;a href=&#34;https://github.com/zoncoen-sample/goyacc-jq-query-parser&#34; target=&#34;_blank&#34;&gt;https://github.com/zoncoen-sample/goyacc-jq-query-parser&lt;/a&gt; にあります。あとこの記事で話してるものを使って雑に作った jq like TOML processor が &lt;a href=&#34;https://github.com/zoncoen/tq&#34; target=&#34;_blank&#34;&gt;https://github.com/zoncoen/tq&lt;/a&gt; に上がってます。）&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go で HTTP/2 最速実装やってみた</title>
+      <link>https://blog.zoncoen.net/2014/11/03/minimum-http2/</link>
+      <pubDate>Mon, 03 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2014/11/03/minimum-http2/</guid>
+      <description>&lt;p&gt;すでに 2 ヶ月も経過してますが、&lt;a href=&#34;http://http2study.connpass.com/event/8151/&#34; target=&#34;_blank&#34;&gt;http2 ハッカソン #3&lt;/a&gt; に参加しました。
+僕は初心者枠で参加したのですが、初心者向けに HTTP/2 最速実装の解説発表がありました。
+HTTP/2 最速実装とは、複雑な機能を省略してできるだけ簡単に HTTP/2 っぽいものを実装するというものです。
+参加した時に途中まで書いて放置していたのですが、今回 &lt;a href=&#34;http://http2study.connpass.com/event/9209/&#34; target=&#34;_blank&#34;&gt;HTTP/2 Conference&lt;/a&gt; に向けて一応動くようにしてみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>初心者がGoでpercolを実装してみた</title>
+      <link>https://blog.zoncoen.net/2014/06/06/percol-in-golang/</link>
+      <pubDate>Fri, 06 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2014/06/06/percol-in-golang/</guid>
+      <description>&lt;p&gt;percol って何？って方は以下の記事をどうぞ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.zoncoen.net/blog/2014/01/14/percol-autojump-with-zsh/&#34; target=&#34;_blank&#34;&gt;ライフチェンジングな percol と autojump の紹介&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最近 Go を勉強していて、&lt;a href=&#34;http://connpass.com/event/6579/&#34; target=&#34;_blank&#34;&gt;ヒカルの go (hikarie.go)&lt;/a&gt;の LT 応募したのもあって、自分が普段から使っている percol を練習がてら Go で実装してみました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

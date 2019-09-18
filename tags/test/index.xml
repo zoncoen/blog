@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test on Degorgement</title>
+    <link>https://blog.zoncoen.net/tags/test/</link>
+    <description>Recent content in test on Degorgement</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Mon, 06 Aug 2018 15:45:10 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.zoncoen.net/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Circle CI で Go のテストを並列に実行する</title>
+      <link>https://blog.zoncoen.net/2018/08/06/run-tests-in-parallel-on-circle-ci/</link>
+      <pubDate>Mon, 06 Aug 2018 15:45:10 +0900</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2018/08/06/run-tests-in-parallel-on-circle-ci/</guid>
+      <description>&lt;p&gt;CicleCI の機能を使うと簡単にできる。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

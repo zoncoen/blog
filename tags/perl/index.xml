@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Perl on Degorgement</title>
+    <link>https://blog.zoncoen.net/tags/perl/</link>
+    <description>Recent content in Perl on Degorgement</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Fri, 11 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.zoncoen.net/tags/perl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Perl の HTTP/2 事情</title>
+      <link>https://blog.zoncoen.net/2015/12/11/http2-in-perl/</link>
+      <pubDate>Fri, 11 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2015/12/11/http2-in-perl/</guid>
+      <description>&lt;p&gt;この記事は &lt;a href=&#34;http://qiita.com/advent-calendar/2015/perl5&#34; target=&#34;_blank&#34;&gt;Perl Advent Calendar 2015&lt;/a&gt; の 11 日目の記事です。&lt;/p&gt;
+
+&lt;p&gt;昨日の記事は &lt;a href=&#34;https://twitter.com/mackee_w&#34; target=&#34;_blank&#34;&gt;mackee_w&lt;/a&gt; さんの「&lt;a href=&#34;http://qiita.com/mackee_w/items/71eca78fb40e5c38fe60&#34; target=&#34;_blank&#34;&gt;ペライチ PSGI アプリケーションの概念と実証&lt;/a&gt;」でした。&lt;/p&gt;
+
+&lt;p&gt;今年 2015 年は、HTTP/2 の RFC が出ましたね。というわけで HTTP/2 の話をします。以前 &lt;a href=&#34;http://gotanda-pm.connpass.com/event/11993/&#34; target=&#34;_blank&#34;&gt;Gotanda.pm #4&lt;/a&gt; にて「&lt;a href=&#34;https://speakerdeck.com/zoncoen/http2-in-perl&#34; target=&#34;_blank&#34;&gt;Perl の HTTP/2 事情&lt;/a&gt;」というタイトルで発表したのですが、それとだいたい一緒です（記事書いてなかったので…）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Plagger 入門 in 2014</title>
+      <link>https://blog.zoncoen.net/2014/12/12/plagger-2014/</link>
+      <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.zoncoen.net/2014/12/12/plagger-2014/</guid>
+      <description>&lt;p&gt;この記事は &lt;a href=&#34;http://qiita.com/advent-calendar/2014/perl&#34; target=&#34;_blank&#34;&gt;Perl Advent Calendar 2014&lt;/a&gt; の 12 日目の記事です。いいですか、&lt;strong&gt;2014&lt;/strong&gt; ですよ。あなたは間違えて 2008 年の Advent Calender を開いてしまったわけではないので安心してください。&lt;/p&gt;
+
+&lt;p&gt;11 日目の記事は &lt;a href=&#34;https://twitter.com/hisaichi5518&#34; target=&#34;_blank&#34;&gt;hisaichi5518&lt;/a&gt; さんの &lt;a href=&#34;http://hisaichi5518.hatenablog.jp/entry/2014/12/11/222358&#34; target=&#34;_blank&#34;&gt;Data::Dumper と B::Deparse を合わせて使ってみる。&lt;/a&gt; でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/miyagawa/plagger&#34; target=&#34;_blank&#34;&gt;Plagger&lt;/a&gt; とは、（&lt;a href=&#34;http://rebuild.fm/&#34; target=&#34;_blank&#34;&gt;Rebuild.fm&lt;/a&gt; の）&lt;a href=&#34;https://twitter.com/miyagawa&#34; target=&#34;_blank&#34;&gt;miyagawa&lt;/a&gt; さんが中心となって開発されていた Perl 製のフィードアグリゲータで、プラグインを組み合わせることで RSS フィードなど様々なデータを任意の形式に変換して出力させることができるものです。雑に言うと &lt;a href=&#34;https://ifttt.com/&#34; target=&#34;_blank&#34;&gt;ifttt&lt;/a&gt; のようなもの（のはず）です。&lt;/p&gt;
+
+&lt;p&gt;今は代替となるような Web サービスがあったり、そもそも RSS フィードや Web hooks がきちんと用意されている Web サービスも多く、使っている方はあまり多くないようですが&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn1&#34;&gt;&lt;a href=&#34;#fn:fn1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、数年前には &amp;ldquo;&lt;a href=&#34;http://d.hatena.ne.jp/keyword/%A4%BD%A4%ECPlagger%A4%C7%A4%C7%A4%AD%A4%EB%A4%E8&#34; target=&#34;_blank&#34;&gt;それ Pla&lt;/a&gt;&amp;rdquo; という言葉が生まれるほど人気のプロダクトだったようです。&lt;/p&gt;
+
+&lt;p&gt;ただ世界的に有名な Perl Hacker である宮川さんのプロダクトということもあり、Perl を使っている会社の人間がうかつなことを言うと、&lt;/p&gt;
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;昨日、 &lt;a href=&#34;https://twitter.com/yosuke_furukawa?ref_src=twsrc%5Etfw&#34;&gt;@yosuke_furukawa&lt;/a&gt; がPlaggerを知らなくて、D社の教育どうなってるんだ！って思いましたね(老害&lt;/p&gt;&amp;mdash; songmu (@songmu) &lt;a href=&#34;https://twitter.com/songmu/status/539243420452020224?ref_src=twsrc%5Etfw&#34;&gt;December 1, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;忘年会，一般枠: 4000円，若手枠: 1000円，Plagger知らない枠: 10万円，とかの振り分けになりそう&lt;/p&gt;&amp;mdash; SKSの申し子 (@repeatedly) &lt;a href=&#34;https://twitter.com/repeatedly/status/539247510691119105?ref_src=twsrc%5Etfw&#34;&gt;December 1, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;このようにいじられる、ということを &lt;a href=&#34;https://twitter.com/yosuke_furukawa&#34; target=&#34;_blank&#34;&gt;yosuke_furukawa&lt;/a&gt; 先輩が身体をはって教えてくださったので、その知見を活かして Plagger を使ったことのなかった僕はきちんと触ってみることにしました。（もちろん僕は Plagger 知っていましたよ :D）&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
