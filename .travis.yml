@@ -3,6 +3,9 @@ language: go
 go:
   - 1.13
 
+env:
+  - GO111MODULE=on
+
 install: true
 
 branches:
@@ -15,7 +18,7 @@ before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.name "Travis CI"
   - git config --global user.email "travis@example.com"
-  - go get github.com/gohugoio/hugo
+  - go get github.com/gohugoio/hugo@v0.54.0
   - cd ./themes/hugo_theme_pickles && git submodule init && git submodule update && cd ../../
 
 script:
