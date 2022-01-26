@@ -15,9 +15,9 @@ tags = ['Perl']
 
 ただ世界的に有名な Perl Hacker である宮川さんのプロダクトということもあり、Perl を使っている会社の人間がうかつなことを言うと、
 
-{{< tweet 539243420452020224 >}}
+{{< tweet user="songmu" id="539243420452020224" >}}
 
-{{< tweet 539247510691119105 >}}
+{{< tweet user="repeatedly" id="539247510691119105" >}}
 
 このようにいじられる、ということを [yosuke_furukawa](https://twitter.com/yosuke_furukawa) 先輩が身体をはって教えてくださったので、その知見を活かして Plagger を使ったことのなかった僕はきちんと触ってみることにしました。（もちろん僕は Plagger 知っていましたよ :D）
 
