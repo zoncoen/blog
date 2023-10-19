@@ -1,6 +1,8 @@
 ---
 title: "Google Home と mornin' を使って声でカーテンを開閉する"
 date: 2017-12-12T00:16:44+09:00
+author: zoncoen
+categories: ["programming"]
 tags: ['Google Home']
 ---
 

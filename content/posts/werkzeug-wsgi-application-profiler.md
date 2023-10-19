@@ -1,8 +1,10 @@
 +++
 title = "WerkzeugでFlaskを使ったPythonのWebAppをプロファイリングする"
-date = "2013-11-12"
+date = "2013-11-12T00:00:00+09:00"
 aliases = ["blog/2013/11/12/werkzeug-wsgi-application-profiler"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ["python"]
 +++
 
 [前回の記事]({{ root_url }}/blog/2013/11/11/logging-system-with-fluentd-elasticsearch-kibana3/)に引き続きISUCONのために調べたことをまとめてみます．

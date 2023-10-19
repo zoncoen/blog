@@ -1,8 +1,10 @@
 +++
 title = "今回のISUCON3本戦で我々は，いや，今回も...くっ...なんの成果も!!得られませんでした!! #isucon"
-date = "2013-11-14"
+date = "2013-11-14T00:00:00+09:00"
 aliases = ["blog/2013/11/14/isucon3-final"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ["isucon"]
 +++
 
 \# タイトルはネタです[^fn1]．タイトルには若干語弊があって，実際はとてもよい経験をさせていただけたのでそれだけでも十分"成果"はありました．実力不足で"結果"が出せなかっただけです．

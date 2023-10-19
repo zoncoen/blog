@@ -1,8 +1,10 @@
 +++
 title = "Gingerを使って英文校正を行うSublime Textプラグインをつくった"
-date = "2013-08-11"
+date = "2013-08-11T00:00:00+09:00"
 aliases = ["blog/2013/08/11/plugin-to-check-grammar-by-ginger-for-sublime-text-2"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ['text editor']
 +++
 
 去年から[Sublime Text](http://www.sublimetext.com/)というテキストエディタを使っています．UIが綺麗で使い方も分かりやすく，Goto Anythingで素早くファイル移動が行えるなど様々な利点がありますが，個人的にはプラグインによる拡張性が一番の魅力だと思っています．様々な人がプラグインを公開しており，プラグインによってテキストエディタでありながらIDEのような便利な機能を実現できます．プラグインはPythonで簡単に作成できるので，自分も何かネタがあれば一度作成してみたいなぁと思っていました．

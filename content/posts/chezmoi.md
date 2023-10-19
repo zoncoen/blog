@@ -1,6 +1,8 @@
 ---
 title: "chezmoi で dotfiles を管理する"
 date: 2022-01-26T17:55:20+09:00
+author: zoncoen
+categories: ["programming"]
 tags: ['tool', 'shell', 'go']
 ---
 

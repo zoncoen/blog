@@ -1,8 +1,10 @@
 +++
 title = "First step"
-date = "2013-07-29"
+date = "2013-07-29T00:00:00+09:00"
 aliases = ["blog/2013/07/29/first-post"]
-Categories = []
+author = "zoncoen"
+categories = ["blog"]
+tags = ["blog"]
 +++
 
 > Shut the fuck up and write some code.  

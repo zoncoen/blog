@@ -1,7 +1,9 @@
 +++
 title = "YAPC::Asia 2014 でエモいトークをした"
-date = "2014-08-30"
+date = "2014-08-30T00:00:00+09:00"
 aliases = ["blog/2014/08/30/yapc-2014-talk"]
+author = "zoncoen"
+categories = ['conference']
 tags = ['conference']
 +++
 

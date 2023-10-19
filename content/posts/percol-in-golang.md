@@ -1,8 +1,10 @@
 +++
 title = "初心者がGoでpercolを実装してみた"
-date = "2014-06-06"
+date = "2014-06-06T00:00:00+09:00"
 aliases = ["blog/2014/06/06/percol-in-golang"]
-tags = ['Go', 'tool']
+author = "zoncoen"
+categories = ["programming"]
+tags = ['go', 'tool']
 +++
 
 percol って何？って方は以下の記事をどうぞ。

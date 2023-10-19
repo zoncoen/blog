@@ -1,7 +1,9 @@
 +++
 title = "Gotanda.pm #1 に参加してきました"
-date = "2014-06-18"
+date = "2014-06-18T00:00:00+09:00"
 aliases = ["blog/2014/06/18/gotanda-pm-01"]
+author = "zoncoen"
+categories = ['conference']
 tags = ['conference']
 +++
 

@@ -1,7 +1,9 @@
 +++
 title = "builderscon にスタッフとして参加しました"
-date = "2016-12-08"
+date = "2016-12-08T00:00:00+09:00"
 aliases = ["blog/2016/12/08/builderscon-2016"]
+author = "zoncoen"
+categories = ["conference"]
 tags = ['conference']
 +++
 

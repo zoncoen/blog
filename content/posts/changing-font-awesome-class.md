@@ -1,8 +1,10 @@
 +++
 title = "Font Awesomeのクラス名が変わっていた件"
-date = "2013-11-10"
+date = "2013-11-10T00:00:00+09:00"
 aliases = ["blog/2013/11/10/changing-font-awesome-class"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ["font"]
 +++
 
 様々なアイコンをテキストとして埋め込むことができる，[Font Awesome](http://fontawesome.io/)というものがあります．原理としてはCSS3のWebフォントという技術を使っています．

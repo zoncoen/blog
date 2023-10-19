@@ -1,8 +1,10 @@
 +++
 title = "Fluentd + ElasticSearch + Kibana3で簡単に様々なログを可視化・解析する"
-date = "2013-11-11"
+date = "2013-11-11T00:00:00+09:00"
 aliases = ["blog/2013/11/11/logging-system-with-fluentd-elasticsearch-kibana3"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ['fluentd', 'kibana', 'ElasticSearch']
 +++
 
 [ISUCON](http://isucon.net/)本戦に参加することができてしまったため，各種ログを集めて簡単に見れると良さそうだなぁと思っていたところ，[Fluentd](http://fluentd.org/) + [Elasticsearch](http://www.elasticsearch.org/) + [Kibana3](http://www.elasticsearch.org/overview/kibana/)の組み合わせがなかなかよさそうだったので試してみました．  

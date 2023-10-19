@@ -1,8 +1,10 @@
 +++
 title = "Perl の HTTP/2 事情"
-date = "2015-12-11"
+date = "2015-12-11T00:00:00+09:00"
 aliases = ["blog/2015/12/11/http2-in-perl"]
-tags = ['Perl']
+author = "zoncoen"
+categories = ["programming"]
+tags = ["perl", "HTTP/2"]
 +++
 
 この記事は [Perl Advent Calendar 2015](http://qiita.com/advent-calendar/2015/perl5) の 11 日目の記事です。

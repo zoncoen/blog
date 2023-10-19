@@ -1,7 +1,9 @@
 ---
 title: 'Google の新しい OS「Fuchsia」を macOS 上で動かしてみる'
 date: 2017-12-18T22:54:12+09:00
-tags: ['Fuchsia']
+author: zoncoen
+categories: ["programming"]
+tags: ['fuchsia', 'os']
 ---
 
 この記事は [WACUL Advent Calendar 2017](https://qiita.com/advent-calendar/2017/wacul) の 19 日目の記事です。

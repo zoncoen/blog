@@ -1,6 +1,8 @@
 ---
 title: "AMD Ryzen でゲーミング PC を組んだ"
 date: 2019-07-10T23:20:27+09:00
+author: zoncoen
+categories: ['misc']
 tags: ['Windows', 'Ryzen']
 ---
 

@@ -1,8 +1,10 @@
 +++
 title = "Gmail ライクにメールを検索する Alfred Workflow をつくった"
-date = "2014-02-16"
+date = "2014-02-16T00:00:00+09:00"
 aliases = ["blog/2014/02/16/alfred-workflow-mail-searcher"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ["perl", "alfred", "tool"]
 +++
 
 Mac ユーザの皆さま，[Alfred](http://www.alfredapp.com/) は使っておられますでしょうか？

@@ -1,7 +1,9 @@
 +++
 title = "ライフチェンジングなpercolとautojumpの紹介"
-date = "2014-01-14"
+date = "2014-01-14T00:00:00+09:00"
 aliases = ["blog/2014/01/14/percol-autojump-with-zsh"]
+author = "zoncoen"
+categories = ["programming"]
 tags = ['tool']
 +++
 

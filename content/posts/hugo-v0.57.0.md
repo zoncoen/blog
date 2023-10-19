@@ -1,7 +1,9 @@
 ---
 title: 'Hugo v0.57.0 の breaking change'
 date: 2019-09-18T22:28:39+09:00
-tags: ['Go', 'tool', 'blog']
+author: zoncoen
+categories: ["programming"]
+tags: ['go', 'hugo', 'tool', 'blog']
 ---
 
 Hugo v0.57.0 に breaking change が含まれていて自分のブログのトップページが壊れた。その時の修正メモ。

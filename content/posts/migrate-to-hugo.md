@@ -1,7 +1,9 @@
 ---
 title: 'ブログで使う static site generator を Octopress から Hugo に移行した'
 date: 2017-12-02T18:36:13+09:00
-tags: ['Go', 'tool', 'blog']
+author: zoncoen
+categories: ["programming"]
+tags: ['go', 'hugo', 'tool', 'blog']
 ---
 
 最近全然更新できてなかったこのブログを、いまさらながら Octopress から Hugo に移行した。

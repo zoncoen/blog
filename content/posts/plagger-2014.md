@@ -1,8 +1,10 @@
 +++
 title = "Plagger 入門 in 2014"
-date = "2014-12-12"
+date = "2014-12-12T00:00:00+09:00"
 aliases = ["blog/2014/12/12/plagger-2014"]
-tags = ['Perl']
+author = "zoncoen"
+categories = ["programming"]
+tags = ['perl', 'plagger']
 +++
 
 この記事は [Perl Advent Calendar 2014](http://qiita.com/advent-calendar/2014/perl) の 12 日目の記事です。いいですか、**2014** ですよ。あなたは間違えて 2008 年の Advent Calender を開いてしまったわけではないので安心してください。

@@ -1,8 +1,10 @@
 +++
 title = "ISUCON3予選に学生枠で参加してみた #isucon"
-date = "2013-10-07"
+date = "2013-10-07T00:00:00+09:00"
 aliases = ["blog/2013/10/07/participation-of-the-isucon3-preliminary"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ['isucon']
 +++
 
 [ISUCON](http://isucon.net/)に[@yunazuno](https://twitter.com/yunazuno)と[@nerbaraki_m2](https://twitter.com/nerbaraki_m2)とともに，チーム"かまたまうどん"と称して参加してきました．

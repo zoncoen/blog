@@ -1,7 +1,9 @@
 ---
 title: 'Software Design 2019 年 10 月号に寄稿させていただきました'
 date: 2019-09-18T20:43:24+09:00
-tags: ['Go', 'book']
+author: zoncoen
+categories: ["book"]
+tags: ['go', 'book']
 ---
 
 技術評論社様の [Software Design 2019 年 10 月号](http://gihyo.jp/magazine/SD/archive/2019/201910)に「Go のプラグイン機能でソフトウェアに柔軟な拡張性を」というタイトルで寄稿させていただきました。

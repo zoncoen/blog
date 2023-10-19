@@ -1,8 +1,10 @@
 +++
 title = "goyacc を使って簡単な jq like query parser を作る"
-date = "2015-12-22"
+date = "2015-12-22T00:00:00+09:00"
 aliases = ["blog/2015/12/22/cli-toml-processor-with-goyacc"]
-tags = ['Go', 'tool']
+author = "zoncoen"
+categories = ["programming"]
+tags = ['go', 'tool']
 +++
 
 この記事は [Go その 3 Advent Calendar 2015](http://qiita.com/advent-calendar/2015/go3) の 22 日目の記事です。

@@ -1,7 +1,9 @@
 +++
 title = "Dashのスニペット機能の紹介"
-date = "2014-07-07"
+date = "2014-07-07T00:00:00+09:00"
 aliases = ["blog/2014/07/07/dash-snippet"]
+author = "zoncoen"
+categories = ['tips']
 tags = ['tips']
 +++
 

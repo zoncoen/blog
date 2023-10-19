@@ -1,8 +1,10 @@
 +++
 title = "unite-autojumpをつくった"
-date = "2014-01-15"
+date = "2014-01-15T00:00:00+09:00"
 aliases = ["blog/2014/01/15/unite-autojump"]
-tags = ['Vim']
+author = "zoncoen"
+categories = ["programming"]
+tags = ["vim"]
 +++
 
 この記事は[ Vim Advent Calendar 2013 ](http://atnd.org/events/45072)46 日目の記事になります． # 46 日目とは

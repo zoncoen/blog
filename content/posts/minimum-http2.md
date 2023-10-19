@@ -1,8 +1,10 @@
 +++
 title = "Go で HTTP/2 最速実装やってみた"
-date = "2014-11-03"
+date = "2014-11-03T00:00:00+09:00"
 aliases = ["blog/2014/11/03/minimum-http2"]
-tags = ['Go']
+author = "zoncoen"
+categories = ["programming"]
+tags = ["go", "HTTP/2"]
 +++
 
 すでに 2 ヶ月も経過してますが、[http2 ハッカソン #3](http://http2study.connpass.com/event/8151/) に参加しました。

@@ -1,7 +1,9 @@
 ---
 title: "GAINWARD GeForce RTX 3070 Ti Phoenix を購入した"
 date: 2022-05-19T01:55:20+09:00
-tags: ['Windows']
+author: zoncoen
+categories: ["misc"]
+tags: ['windows']
 ---
 
 半導体不足やマイニング需要などで高騰していた GPU の値段がかなり落ち着いてきていたので、[GAINWARD GeForce RTX 3070 Ti Phoenix](https://www.gainward.com/main/vgapro.php?id=1130) を購入した。

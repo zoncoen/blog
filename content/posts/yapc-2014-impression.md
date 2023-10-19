@@ -1,7 +1,9 @@
 +++
 title = "はじめての YAPC::Asia (2014)"
-date = "2014-09-08"
+date = "2014-09-08T00:00:00+09:00"
 aliases = ["blog/2014/09/08/yapc-2014-impression"]
+author = "zoncoen"
+categories = ['conference']
 tags = ['conference']
 +++
 

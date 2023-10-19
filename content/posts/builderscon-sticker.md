@@ -1,7 +1,9 @@
 +++
 title = "builderscon ステッカーが届きました"
-date = "2016-10-21"
+date = "2016-10-21T00:00:00+09:00"
 aliases = ["blog/2016/10/21/builderscon-sticker"]
+author = "zoncoen"
+categories = ["conference"]
 tags = ['conference']
 +++
 

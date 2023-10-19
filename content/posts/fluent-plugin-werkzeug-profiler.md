@@ -1,8 +1,10 @@
 +++
 title = "fluent-plugin-werkzeug-profilerを書いた"
-date = "2013-11-13"
+date = "2013-11-13T00:00:00+09:00"
 aliases = ["blog/2013/11/13/fluent-plugin-werkzeug-profiler"]
-Categories = []
+author = "zoncoen"
+categories = ["programming"]
+tags = ["fluentd", "plugin", "kibana"]
 +++
 
 表題の通り，KibanaでWerkzeugのプロファイリング結果を見たいがためにFluentdのプラグインを書いてみました．あまりにもニッチすぎる感．ISUCONのために書きました．
