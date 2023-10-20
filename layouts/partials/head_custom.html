@@ -6,7 +6,7 @@
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ with .Description -}}{{ . }}{{ else -}}{{ if .IsPage }}{{ substr .Summary 0 300 }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-<meta property="og:image" content="{{ if .Params.thumbnail -}}{{ .Params.thumbnail|absURL }}{{ else if os.FileExists (path.Join "static/ogp" (print .File.BaseFileName ".png")) -}}{{ path.Join "ogp" (print .File.BaseFileName ".png") | absURL }}{{ else -}}{{ "ogp/default.png" | absURL }}{{ end -}}" />
+<meta property="og:image" content="{{ if .Params.thumbnail -}}{{ .Params.thumbnail|absURL }}{{ else if (and (.File) (os.FileExists (path.Join "static/ogp" (print .File.BaseFileName ".png")))) -}}{{ path.Join "ogp" (print .File.BaseFileName ".png") | absURL }}{{ else -}}{{ "ogp/default.png" | absURL }}{{ end -}}" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

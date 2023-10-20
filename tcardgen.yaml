@@ -2,9 +2,9 @@ template: static/ogp/template.png
 title:
   start:
     px: 80
-    py: 60
+    py: 80
   fgHexColor: "#D6B774"
-  fontSize: 72
+  fontSize: 65
   fontStyle: Bold
   maxWidth: 1040
   lineSpacing: 10

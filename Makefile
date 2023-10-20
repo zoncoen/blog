@@ -20,6 +20,11 @@ lint:
 		fi \
 	done
 
+.PHONY: tools
+tools:
+	go install github.com/zoncoen/tcardgen@v0.1.0
+	npm install -g budoux@0.5.2
+
 .PHONY: ogp
 ogp:
 	@git diff --name-only HEAD ./content/posts | xargs -I{} tcardgen -c ./tcardgen.yaml -f ./static/font -o ./static/ogp {}
