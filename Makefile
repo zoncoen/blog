@@ -22,8 +22,8 @@ lint:
 
 .PHONY: tools
 tools:
-	go install github.com/zoncoen/tcardgen@v0.1.0
-	npm install -g budoux@0.5.2
+	go install github.com/zoncoen/tcardgen@v0.9.0
+	npm install -g budoux@0.7.0
 
 .PHONY: ogp
 ogp:
