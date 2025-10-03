@@ -13,12 +13,12 @@ rssLimit = 15
 theme = "hugo_theme_pickles"
 title = "Degorgement"
 [permalinks]
-    posts = "/:year/:month/:day/:filename/"
+    posts = "/:year/:month/:day/:contentbasename/"
 [params]
     author = "Kenta Mori"
     authorwebsite = "https://twitter.com/zoncoen"
     avatar = "/images/avatar.png"
-    bio = "Software engineer at Mercari, Inc."
+    bio = "Software engineer at newmo, Inc."
     contact = "https://twitter.com/zoncoen"
     paginate = 10
     # disqus = "404el"
