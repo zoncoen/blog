@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>alfred on Degorgement</title><link>https://blog.zoncoen.net/tags/alfred/</link><description>Recent content in alfred on Degorgement</description><generator>Hugo -- gohugo.io</generator><language>ja-JP</language><lastBuildDate>Sun, 16 Feb 2014 00:00:00 +0900</lastBuildDate><atom:link href="https://blog.zoncoen.net/tags/alfred/index.xml" rel="self" type="application/rss+xml"/><item><title>Gmail ライクにメールを検索する Alfred Workflow をつくった</title><link>https://blog.zoncoen.net/2014/02/16/alfred-workflow-mail-searcher/</link><pubDate>Sun, 16 Feb 2014 00:00:00 +0900</pubDate><guid>https://blog.zoncoen.net/2014/02/16/alfred-workflow-mail-searcher/</guid><description>&lt;p>Mac ユーザの皆さま，&lt;a href="http://www.alfredapp.com/">Alfred&lt;/a> は使っておられますでしょうか？
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Alfred on Degorgement</title><link>https://blog.zoncoen.net/tags/alfred/</link><description>Recent content in Alfred on Degorgement</description><generator>Hugo</generator><language>ja-JP</language><lastBuildDate>Fri, 20 Oct 2023 08:16:14 +0900</lastBuildDate><atom:link href="https://blog.zoncoen.net/tags/alfred/index.xml" rel="self" type="application/rss+xml"/><item><title>Gmail ライクにメールを検索する Alfred Workflow をつくった</title><link>https://blog.zoncoen.net/2014/02/16/alfred-workflow-mail-searcher/</link><pubDate>Sun, 16 Feb 2014 00:00:00 +0900</pubDate><guid>https://blog.zoncoen.net/2014/02/16/alfred-workflow-mail-searcher/</guid><description>&lt;p&gt;Mac ユーザの皆さま，&lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt; は使っておられますでしょうか？
 ご存知の方も多いと思いますが，Alfred は Mac で使えるコマンドライン型ランチャーです．
 基本的には標準で搭載されている Spotlight でも同じようなことができますが，Alfred の方が拡張性も高く使いやすいと思います．
-特に &lt;a href="http://www.alfredapp.com/powerpack/">Powerpack&lt;/a> という有料パックを購入すると使えるようになる Workflow という機能がめちゃくちゃ便利です．
+特に &lt;a href="http://www.alfredapp.com/powerpack/"&gt;Powerpack&lt;/a&gt; という有料パックを購入すると使えるようになる Workflow という機能がめちゃくちゃ便利です．
 Workflow とは Alfred からスクリプトを実行する機能で，例えば Alfred から VM を操作したり，Evernote を検索したりすることができます．
-Workflow は簡単に公開することができるので，様々な Workflow が公開されています．&lt;/p>
-&lt;p>(参考: &lt;a href="http://veadardiary.blog29.fc2.com/blog-entry-4425.html">Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow&lt;/a>，&lt;a href="http://mac.appstorm.net/roundups/utilities-roundups/16-great-workflows-to-jumpstart-your-alfred-experience/">16 Great Workflows to Jumpstart Your Alfred Experience&lt;/a>，&lt;a href="http://www.alfredworkflow.com/">Alfred 2 Workflow List&lt;/a>)&lt;/p>
-&lt;p>個人的には Mac を使う理由の1つと言ってもよいほど快適です．
-使ってない人はぜひ一度試してみてください（Alfred の紹介記事は検索すればたくさんヒットするので使い方等は割愛します）．&lt;/p>
-&lt;p>で，ヘビーユーザーな自分はメールの検索も Alfred でやりたかったので，今回 Alfred で Mail.app 内のメールを検索する Workflow をつくったという話です．&lt;/p>
-&lt;!-- raw HTML omitted --></description></item></channel></rss>
+Workflow は簡単に公開することができるので，様々な Workflow が公開されています．&lt;/p&gt;
+&lt;p&gt;(参考: &lt;a href="http://veadardiary.blog29.fc2.com/blog-entry-4425.html"&gt;Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow&lt;/a&gt;，&lt;a href="http://mac.appstorm.net/roundups/utilities-roundups/16-great-workflows-to-jumpstart-your-alfred-experience/"&gt;16 Great Workflows to Jumpstart Your Alfred Experience&lt;/a&gt;，&lt;a href="http://www.alfredworkflow.com/"&gt;Alfred 2 Workflow List&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;個人的には Mac を使う理由の1つと言ってもよいほど快適です．
+使ってない人はぜひ一度試してみてください（Alfred の紹介記事は検索すればたくさんヒットするので使い方等は割愛します）．&lt;/p&gt;
+&lt;p&gt;で，ヘビーユーザーな自分はメールの検索も Alfred でやりたかったので，今回 Alfred で Mail.app 内のメールを検索する Workflow をつくったという話です．&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description></item></channel></rss>
